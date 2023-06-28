@@ -11,9 +11,6 @@
 case "${1}" in
   "before")
 
-    # run auto bluetooth pairing in background
-    emuelec-bluetooth 10 -1 >>~/.config/emuelec/logs/bluetooth.log &
-
     # Any commands that you want to run before the frontend begins should go here
 
     # example BT config, use only as a last resort

@@ -339,7 +339,6 @@ def on_device_removed(dev: BluetoothDevice):
 
 
 SCAN_TIME = 150
-FORGET_WAIT_TIME = 10
 
 ELAPSED_TIME = 0
 UPDATE_INTERVAL = 10
@@ -347,8 +346,6 @@ UPDATE_INTERVAL = 10
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
         SCAN_TIME = int(sys.argv[1])
-    if len(sys.argv) >= 3:
-        FORGET_WAIT_TIME = int(sys.argv[2])
 
     print("running scan on " + str(SCAN_TIME))
     bt = BluetoothCTL()

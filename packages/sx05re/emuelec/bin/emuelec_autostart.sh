@@ -124,7 +124,8 @@ systemctl stop bluetooth
 rm /storage/.cache/services/bluez.conf & 
 else
 systemctl restart bluetooth
-emuelec-bluetooth &
+# run auto bluetooth pairing in background
+emuelec-bluetooth -1 >>~/.config/emuelec/logs/bluetooth.log &
 fi
 
 # What to start at boot?

@@ -1,0 +1,16 @@
+diff --git a/menu/cbs/menu_cbs_cancel.c b/menu/cbs/menu_cbs_cancel.c
+index a240dd5355..3670f2e830 100644
+--- a/menu/cbs/menu_cbs_cancel.c
++++ b/menu/cbs/menu_cbs_cancel.c
+@@ -48,6 +48,11 @@ int action_cancel_pop_default(const char *path,
+
+    menu_entries_get_last_stack(NULL, &menu_label, &menu_type, NULL, NULL);
+
++   /* disable cancel button on quick menu */
++   if (menu_is_running_quick_menu()) {
++      return 0;
++   }
++
+    /* Check whether search terms have been set
+     * > If so, check whether this is a menu list
+     *   with 'search filter' support

@@ -35,7 +35,7 @@ GET_HANDLER_SUPPORT="git"
 
 make_target() {
 cd $PKG_BUILD/yabause/src/libretro
-make HAVE_SSE=0 platform=armvneonhardfloat
+make HAVE_SSE=0
 }
 
 makeinstall_target() {

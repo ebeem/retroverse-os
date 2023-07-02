@@ -7,6 +7,7 @@ import sys
 import os
 import re
 from threading import Thread
+from multiprocessing import Process
 
 DEBUG = False
 
@@ -343,6 +344,8 @@ SCAN_TIME = 150
 ELAPSED_TIME = 0
 UPDATE_INTERVAL = 10
 
+BT_THREAD: Process = None
+
 if __name__ == "__main__":
     if len(sys.argv) >= 2:
         SCAN_TIME = int(sys.argv[1])
@@ -359,8 +362,6 @@ if __name__ == "__main__":
     bt.discoverable = True
     bt.pairable = True
 
-    bt.scan_async(timeout=SCAN_TIME)
-
     while True:
         time.sleep(UPDATE_INTERVAL)
         ELAPSED_TIME += UPDATE_INTERVAL
@@ -371,7 +372,10 @@ if __name__ == "__main__":
         else:
             if not is_in_game() and not bt.scanning:
                 print("emustation is active now, resuming scan")
-                bt.scan_async(timeout=SCAN_TIME)
+                BT_THREAD = Process(target=bt.scan_async, args=(SCAN_TIME,))
+                BT_THREAD.start()
             elif is_in_game() and bt.scanning:
                 print("emustation is inactive now, stopping scan")
                 bt.scan_stop()
+                if BT_THREAD is not None:
+                    BT_THREAD.terminate()

@@ -170,98 +170,8 @@ class BluetoothCTL:
                         ):
                             on_device_discovered(devs[0])
 
-        # while p.poll() is None:  # Check the the child process is still running
-        #     line = p.stdout.readline()
-        #     if line != "":
-        #         if DEBUG:
-        #             print(line)
-        #         if (
-        #             len(line.split()) >= 3
-        #             and len(line.split()[2]) == 17
-        #             and (line.startswith("[DEL]") or line.startswith("[CHG]"))
-        #         ):
-        #             devs = [x for x in bt.devices() if x.mac == line.split()[2]]
-        #             if len(devs) > 0:
-        #                 if line.startswith("[DEL]"):
-        #                     on_device_removed(devs[0])
-        #                 elif line.startswith("[CHG]") and "RSSI:" in line:
-        #                     on_device_discovered(devs[0])
-        #     else:
-        #         break
-
-        # self.async_bluetooth_process = Popen(cmd.split(), stdout=PIPE, bufsize=1)
-        # for line in iter(self.async_bluetooth_process.stdout.readline, b""):
-        #     print("Process response:", line)
-        # self.async_bluetooth_process.stdout.close()
-        # self.async_bluetooth_process.wait()
-        # while (
-        #     self.async_bluetooth_process.poll() is None
-        # ):  # Check the the child process is still running
-        #     response = self.async_bluetooth_process.stdout.read()
-        #     if response != "":
-        #         print("Process response:", response)
-        #     else:
-        #         break
-        # line = self.async_bluetooth_process.stdout.readline()
-        # if line != "":
-        #     if DEBUG:
-        #         print(line)
-        #     if (
-        #         len(line.split()) >= 3
-        #         and len(line.split()[2]) == 17
-        #         and (line.startswith("[DEL]") or line.startswith("[CHG]"))
-        #     ):
-        #         devs = [x for x in bt.devices() if x.mac == line.split()[2]]
-        #         if len(devs) > 0:
-        #             if line.startswith("[DEL]"):
-        #                 on_device_removed(devs[0])
-        #             elif line.startswith("[CHG]") and "RSSI:" in line:
-        #                 on_device_discovered(devs[0])
-
-        # else:
-        #     break
-        # with Popen(
-        #     cmd, shell=True, stdout=PIPE, bufsize=1, universal_newlines=True
-        # ) as p:
-        #     while p.poll() is None:  # Check the the child process is still running
-        #         line = p.stdout.readline()
-        #         if line != "":
-        #             if DEBUG:
-        #                 print(line)
-        #             if (
-        #                 len(line.split()) >= 3
-        #                 and len(line.split()[2]) == 17
-        #                 and (line.startswith("[DEL]") or line.startswith("[CHG]"))
-        #             ):
-        #                 devs = [x for x in bt.devices() if x.mac == line.split()[2]]
-        #                 if len(devs) > 0:
-        #                     if line.startswith("[DEL]"):
-        #                         on_device_removed(devs[0])
-        #                     elif line.startswith("[CHG]") and "RSSI:" in line:
-        #                         on_device_discovered(devs[0])
-        #         else:
-        #             break
-
-        # while True:
-        #     line = p.stdout.readline()
-        #     if not line:
-        #         break
-        #     if DEBUG:
-        #         print(line)
-        #     if (
-        #         len(line.split()) >= 3
-        #         and len(line.split()[2]) == 17
-        #         and (line.startswith("[DEL]") or line.startswith("[CHG]"))
-        #     ):
-        #         devs = [x for x in bt.devices() if x.mac == line.split()[2]]
-        #         if len(devs) > 0:
-        #             if line.startswith("[DEL]"):
-        #                 on_device_removed(devs[0])
-        #             elif line.startswith("[CHG]") and "RSSI:" in line:
-        #                 on_device_discovered(devs[0])
-
     def scan_stop(self):
-        ShellIO.execute_async(["pkill", "-f", "bluetoothctl scan on"])
+        ShellIO.execute_async(["pkill", "-f", "bluetoothctl"])
 
     @property
     def scanning(self) -> bool:
@@ -302,7 +212,7 @@ class BluetoothCTL:
         )
 
 
-# returns true if a game is runnign via the emuelecRunEmu script
+# returns true if a game is running via the emuelecRunEmu script
 def is_in_game():
     return ShellIO.execute_lookup(["ps", "-ef"], "emuelecRunEmu.sh", debug=False)
 
@@ -311,7 +221,7 @@ def is_in_game():
 def is_bluetooth_running():
     out = ShellIO.execute(["ps", "-ef"], debug=False)
     for o in out:
-        if re.search(r"(emuelec-bluetooth) \d+ -1", o) is not None:
+        if "emuelec-bluetooth -1" in o:
             return False if str(os.getpid()) in o else True
     return False
 

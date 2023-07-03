@@ -2,7 +2,7 @@
 # Copyright (C) 2019-present Shanti Gilbert (https://github.com/shantigilbert)
 
 PKG_NAME="es-theme-retroverse"
-PKG_VERSION="950dcb405104fc70b425ddcd1d7da3af64fe6cbb"
+PKG_VERSION="01a76f44bd77072a1e6acf9e509ca1ebf40a4f6d"
 PKG_REV="1"
 PKG_ARCH="any"
 PKG_LICENSE="GPL"

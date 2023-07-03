@@ -1,0 +1,26 @@
+diff --git a/es-app/src/ApiSystem.cpp b/es-app/src/ApiSystem.cpp
+index 919c10f5..3d74725d 100644
+--- a/es-app/src/ApiSystem.cpp
++++ b/es-app/src/ApiSystem.cpp
+@@ -166,7 +166,7 @@ std::string ApiSystem::getVersion(bool extra)
+ {
+ 	LOG(LogDebug) << "ApiSystem::getVersion";
+ #ifdef _ENABLEEMUELEC
+-	std::ifstream ifs("/usr/config/EE_VERSION");
++	std::ifstream ifs("/storage/.config/EE_VERSION");
+ #else
+ 	std::ifstream ifs("/usr/share/batocera/batocera.version");
+ #endif
+diff --git a/es-core/src/Paths.cpp b/es-core/src/Paths.cpp
+index b09971cc..f3782973 100644
+--- a/es-core/src/Paths.cpp
++++ b/es-core/src/Paths.cpp
+@@ -75,7 +75,7 @@ Paths::Paths()
+ 	mUserMusicPath = "/emuelec/BGM";
+ 	mDecorationsPath = "/storage/roms/bezels";
+ 	mUserDecorationsPath = "/tmp/overlays/bezels";
+-	mVersionInfoPath = "/usr/config/EE_VERSION";
++	mVersionInfoPath = "/storage/.config/EE_VERSION";
+ 	mSystemConfFilePath = "/emuelec/configs/emuelec.conf";
+ 	mScreenShotsPath = "/storage/roms/screenshots";
+ 	mSaveStatesPath = "/storage/roms/savestates";

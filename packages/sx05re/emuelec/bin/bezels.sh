@@ -27,10 +27,10 @@ case ${PLATFORM} in
     ;;
   "none")
     if [ -f "/storage/.config/bezels_enabled" ]; then
-      clear_bezel
-      sed -i '/input_overlay = "/d' ${RACONFIG}
       rm "/storage/.config/bezels_enabled"
     fi
+    clear_bezel
+    sed -i '/input_overlay = "/d' ${RACONFIG}
     exit 0
     ;;
   "SETUP")

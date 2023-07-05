@@ -79,29 +79,30 @@ class BluetoothCTL:
             rssi=0,
         )
         for i in info:
-            if "Name:" in i:
+            i = i.strip()
+            if i.startswith("Name:"):
                 dev.name = i.split(":")[1].strip()
-            if "Alias:" in i:
+            if i.startswith("Alias:"):
                 dev.alias = i.split(":")[1].strip()
-            if "Class:" in i:
+            if i.startswith("Class:"):
                 dev.clas = i.split(":")[1].strip()
-            if "Icon:" in i:
+            if i.startswith("Icon:"):
                 dev.icon = i.split(":")[1].strip()
-            if "Paired:" in i:
+            if i.startswith("Paired:"):
                 dev.paired = i.split(":")[1].strip() == "yes"
-            if "Bounded:" in i:
+            if i.startswith("Bounded:"):
                 dev.bounded = i.split(":")[1].strip() == "yes"
-            if "Trusted:" in i:
+            if i.startswith("Trusted:"):
                 dev.trusted = i.split(":")[1].strip() == "yes"
-            if "Blocked:" in i:
+            if i.startswith("Blocked:"):
                 dev.blocked = i.split(":")[1].strip() == "yes"
-            if "Connected:" in i:
+            if i.startswith("Connected:"):
                 dev.connected = i.split(":")[1].strip() == "yes"
-            if "WakeAllowed:" in i:
+            if i.startswith("WakeAllowed:"):
                 dev.wake_allowed = i.split(":")[1].strip() == "yes"
-            if "LegacyPairing:" in i:
+            if i.startswith("LegacyPairing:"):
                 dev.legacy_pairing = i.split(":")[1].strip() == "yes"
-            if "RSSI:" in i:
+            if i.startswith("RSSI:"):
                 dev.rssi = int(i.split(":")[1].strip())
         return dev
 
@@ -168,7 +169,9 @@ class BluetoothCTL:
                         elif "NEW" in line.split()[0] or (
                             "CHG" in line.split()[0] and "RSSI:" in line
                         ):
-                            on_device_discovered(devs[0])
+                            if not on_device_discovered(devs[0]):
+                                print("stopping thread")
+                                break
 
     def scan_stop(self):
         ShellIO.execute_async(["pkill", "-f", "bluetoothctl"])
@@ -226,7 +229,7 @@ def is_bluetooth_running():
     return False
 
 
-def on_device_discovered(dev: BluetoothDevice):
+def on_device_discovered(dev: BluetoothDevice) -> bool:
     if (
         not dev.connected  # exclude already connected devices
         and dev.rssi != 0  # exclude inactive devices (saved)
@@ -240,9 +243,12 @@ def on_device_discovered(dev: BluetoothDevice):
 
         if bt.trust(dev) and bt.pair(dev) and bt.connect(dev):
             print("connected device {}".format(dev.name))
+            return False
         else:
             bt.forget(dev)
             print("forgot device {}".format(dev.name))
+
+    return True
 
 
 def on_device_removed(dev: BluetoothDevice):
@@ -252,7 +258,7 @@ def on_device_removed(dev: BluetoothDevice):
 SCAN_TIME = 150
 
 ELAPSED_TIME = 0
-UPDATE_INTERVAL = 10
+UPDATE_INTERVAL = 5
 
 BT_THREAD: Process = None
 
@@ -273,9 +279,6 @@ if __name__ == "__main__":
     bt.pairable = True
 
     while True:
-        time.sleep(UPDATE_INTERVAL)
-        ELAPSED_TIME += UPDATE_INTERVAL
-
         if SCAN_TIME >= 0:
             if ELAPSED_TIME > SCAN_TIME:
                 exit()
@@ -286,6 +289,9 @@ if __name__ == "__main__":
                 BT_THREAD.start()
             elif is_in_game() and bt.scanning:
                 print("emustation is inactive now, stopping scan")
-                bt.scan_stop()
                 if BT_THREAD is not None:
                     BT_THREAD.terminate()
+                bt.scan_stop()
+
+        time.sleep(UPDATE_INTERVAL)
+        ELAPSED_TIME += UPDATE_INTERVAL

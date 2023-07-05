@@ -12,6 +12,7 @@
 RETROARCHIVEMENTS=(3do arcade atari2600 atari7800 atarilynx coleco colecovision famicom fbn fbneo fds gamegear gb gba gbc lynx mame genesis mastersystem megadrive megadrive-japan msx n64 neogeo nes ngp pcengine pcfx pokemini psx saturn sega32x segacd sfc sg-1000 snes tg16 vectrex virtualboy wonderswan)
 NOREWIND=(sega32x zxspectrum odyssey2 mame n64 dreamcast atomiswave naomi neogeocd saturn psp pspminis)
 NORUNAHEAD=(psp sega32x n64 dreamcast atomiswave naomi neogeocd saturn)
+SYSTEMSAVEFILE=(psp)
 
 INDEXRATIOS=(4/3 16/9 16/10 16/15 21/9 1/1 2/1 3/2 3/4 4/1 9/16 5/4 6/5 7/9 8/3 8/7 19/12 19/14 30/17 32/9 config squarepixel core custom full)
 CONF="/storage/.config/emuelec/configs/emuelec.conf"
@@ -44,6 +45,7 @@ function clean_settings() {
   sed -i '/video_scale_integer =/d' ${RACONF}
   sed -i '/video_scale_integer_overscale =/d' ${RACONF}
   sed -i '/video_shader =/d' ${RACONF}
+  sed -i '/savefiles_in_content_dir =/d' ${RACONF}
   sed -i '/video_shader_enable =/d' ${RACONF}
   sed -i '/video_smooth =/d' ${RACONF}
   sed -i '/aspect_ratio_index =/d' ${RACONF}
@@ -124,6 +126,7 @@ function default_settings() {
   echo 'video_ogs_vertical_enable = "false"' >>${RACONF}
   echo 'video_ctx_scaling = "false"' >>${RACONF}
   echo 'video_frame_delay_auto = "false"' >>${RACONF}
+  echo 'savefiles_in_content_dir = "true"' >>${RACONF}
 }
 
 function set_setting() {
@@ -203,6 +206,16 @@ function set_setting() {
         echo "video_shader = \"${2}\"" >>${RACONF}
         echo 'video_shader_enable = "true"' >>${RACONF}
         echo "--set-shader /tmp/shaders/${2}"
+      fi
+      ;;
+    "systemfilesave")
+      (for e in "${SYSTEMSAVEFILE[@]}"; do [[ "${e}" == "${PLATFORM}" ]] && exit 0; done) && RA=0 || RA=1
+      if [ $RA == 1 ]; then
+        if [ "${2}" == "false" ] || [ "${2}" == "none" ] || [ "${2}" == "0" ]; then
+          echo 'savefiles_in_content_dir = "true"' >>${RACONF}
+        else
+          echo 'savefiles_in_content_dir = "false"' >>${RACONF}
+        fi
       fi
       ;;
     "runahead")
@@ -463,7 +476,7 @@ function get_setting() {
 
 clean_settings
 
-for s in ratio smooth shaderset rewind autosave integerscale integerscaleoverscale runahead secondinstance video_frame_delay_auto retroachievements ai_service_enabled netplay fps vertical rgascale snapshot; do
+for s in ratio smooth shaderset rewind autosave integerscale integerscaleoverscale systemfilesave runahead secondinstance video_frame_delay_auto retroachievements ai_service_enabled netplay fps vertical rgascale snapshot; do
   get_setting $s
   [ -z "${EES}" ] || SETF=1
 done

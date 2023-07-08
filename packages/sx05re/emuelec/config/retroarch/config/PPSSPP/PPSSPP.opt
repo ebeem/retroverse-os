@@ -1,3 +1,4 @@
 ppsspp_force_max_fps = 30
 ppsspp_internal_resolution = 480x272
 ppsspp_cache_iso = "enabled"
+ppsspp_texture_anisotropic_filtering = "8x"

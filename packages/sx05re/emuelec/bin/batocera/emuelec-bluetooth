@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
-from subprocess import Popen, PIPE, STDOUT
+from subprocess import Popen, PIPE
 from dataclasses import dataclass
 import time
 import sys
 import os
-import re
-from threading import Thread
 from multiprocessing import Process
 
 DEBUG = False
@@ -230,6 +228,9 @@ def is_bluetooth_running():
 
 
 def on_device_discovered(dev: BluetoothDevice) -> bool:
+    if dev.blocked:
+        return True
+
     if (
         not dev.connected  # exclude already connected devices
         and dev.rssi != 0  # exclude inactive devices (saved)
@@ -247,6 +248,16 @@ def on_device_discovered(dev: BluetoothDevice) -> bool:
         else:
             bt.forget(dev)
             print("forgot device {}".format(dev.name))
+    elif dev.connected and not dev.trusted and "input-" in dev.icon:
+        print(
+            "trusting and pairing device {}, mac: {}, icon: {}, paired: {}".format(
+                dev.name, dev.mac, dev.icon, dev.paired
+            )
+        )
+
+        if bt.trust(dev):
+            bt.pair(dev)
+            print("successfully trusted {} now connect cable.".format(dev.name))
 
     return True
 
@@ -255,10 +266,9 @@ def on_device_removed(dev: BluetoothDevice):
     pass
 
 
-SCAN_TIME = 150
-
+SCAN_TIME = 60
 ELAPSED_TIME = 0
-UPDATE_INTERVAL = 5
+UPDATE_INTERVAL = 1
 
 BT_THREAD: Process = None
 
@@ -270,7 +280,7 @@ if __name__ == "__main__":
     bt = BluetoothCTL()
 
     if is_bluetooth_running():
-        print("bluetooth is already running")
+        print("bluetooth is already running, exiting.")
         exit()
 
     bt.power = True
@@ -287,11 +297,14 @@ if __name__ == "__main__":
             print("emustation is active now, resuming scan")
             BT_THREAD = Process(target=bt.scan_async, args=(SCAN_TIME,))
             BT_THREAD.start()
+            ShellIO.execute(["connmanctl", "enable", "wifi"])
+
         elif is_in_game() and bt.scanning:
             print("emustation is inactive now, stopping scan")
             if BT_THREAD is not None:
                 BT_THREAD.terminate()
             bt.scan_stop()
+            ShellIO.execute(["connmanctl", "disable", "wifi"])
 
         time.sleep(UPDATE_INTERVAL)
         ELAPSED_TIME += UPDATE_INTERVAL

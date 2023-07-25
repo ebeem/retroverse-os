@@ -90,6 +90,7 @@ function clean_settings() {
   sed -i "/video_ogs_vertical_enable/d" ${RACONF}
   sed -i '/video_ctx_scaling =/d' ${RACONF}
   sed -i '/video_frame_delay_auto =/d' ${RACONF}
+  sed -i "/input_enable_hotkey_btn/d" ${RACONF}
 }
 
 function default_settings() {
@@ -127,6 +128,7 @@ function default_settings() {
   echo 'video_ctx_scaling = "false"' >>${RACONF}
   echo 'video_frame_delay_auto = "false"' >>${RACONF}
   echo 'savefiles_in_content_dir = "true"' >>${RACONF}
+  echo "input_enable_hotkey_btn = \"-9999\"" >>${RACONF}
 }
 
 function set_setting() {
@@ -569,6 +571,24 @@ for i in 1 2 3 4 5; do
     PINDEX="${PINDEX%% -p${i}guid*}"
     sed -i "/input_player${i}_joypad_index =/d" ${RACONF}
     echo "input_player${i}_joypad_index = \"${PINDEX}\"" >>${RACONF}
+
+    # set input hotkey for first controller
+    if [[ "${i}" == 1 ]]; then
+      GAMEPADINFO="$(sdljoytest -skip_loop)"
+      JOYNAME=$(echo "${GAMEPADINFO}" | grep "Joystick 0 name " | sed "s|Joystick 0 name ||" | sed "s|'||g")
+
+      for file in /tmp/joypads/*.cfg; do
+        GAMEPAD=$(cat "$file" | grep "input_device = " | cut -d'"' -f 2)
+        if [ "${JOYNAME}" == "${GAMEPAD}" ]; then
+          GPFILE="${file}"
+          button=$(cat "${GPFILE}" | grep -E 'input_enable_hotkey_btn = ' | cut -d '"' -f2)
+          if [[ -n "${button}" ]]; then
+            sed -i "/input_enable_hotkey_btn/d" ${RACONF}
+            echo "input_enable_hotkey_btn = \"${button}\"" >>${RACONF}
+          fi
+        fi
+      done
+    fi
 
     # Setting controller type for different cores
     if [ "${PLATFORM}" == "atari5200" ]; then

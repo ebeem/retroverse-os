@@ -29,16 +29,16 @@ index 4b513366f..1842e6285 100644
 +						tools/hciattach_bcm43xx.c \
 +						tools/hciattach_sprd.c
  tools_hciattach_LDADD = lib/libbluetooth-internal.la
- 
+
  tools_hciconfig_SOURCES = tools/hciconfig.c
 diff --git a/tools/hciattach.c b/tools/hciattach.c
 index 276a4e56e..a3267a962 100644
 --- a/tools/hciattach.c
 +++ b/tools/hciattach.c
 @@ -38,20 +38,6 @@
- 
+
  #include "hciattach.h"
- 
+
 -struct uart_t {
 -	char *type;
 -	int  m_id;
@@ -59,7 +59,7 @@ index 276a4e56e..a3267a962 100644
 @@ -266,6 +252,19 @@ static int bcm43xx(int fd, struct uart_t *u, struct termios *ti)
  	return bcm43xx_init(fd, u->init_speed, u->speed, ti, u->bdaddr);
  }
- 
+
 +/* add sprd init and post function */
 +static int sprd_init(int fd, struct uart_t *u, struct termios *ti)
 +{
@@ -79,13 +79,13 @@ index 276a4e56e..a3267a962 100644
 @@ -1097,6 +1096,9 @@ struct uart_t uart[] = {
  	{ "amp",	0x0000, 0x0000, HCI_UART_H4, 115200, 115200,
  			AMP_DEV, DISABLE_PM, NULL, NULL, NULL },
- 
+
 +	/* Bluetooth chip (UWE5622)*/
 +	{  "sprd",      0x0000, 0x0000, NULL, 115200, 1500000,
 +			FLOW_CTL, DISABLE_PM, NULL, sprd_init, sprd_post},
  	{ NULL, 0 }
  };
- 
+
 diff --git a/tools/hciattach.h b/tools/hciattach.h
 index 26c0d5424..69bc0ccef 100644
 --- a/tools/hciattach.h
@@ -93,7 +93,7 @@ index 26c0d5424..69bc0ccef 100644
 @@ -40,6 +40,20 @@
  #define HCI_UART_EXT_CONFIG	4
  #define HCI_UART_VND_DETECT	5
- 
+
 +struct uart_t {
 +	char *type;
 +	int  m_id;
@@ -957,6 +957,5 @@ index 000000000..12b4795de
 +	SPRD_DBG("Done setting line discpline");
 +	return 0;
 +}
--- 
+--
 2.30.2
-

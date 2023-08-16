@@ -7,13 +7,13 @@ Last-Update: 2017-04-05
 @@ -1091,6 +1091,9 @@
  	{ "bcm43xx",    0x0000, 0x0000, HCI_UART_H4,   115200, 3000000,
  				FLOW_CTL, DISABLE_PM, NULL, bcm43xx, NULL  },
- 
+
 +	{ "bcm43xx-3wire",    0x0000, 0x0000, HCI_UART_3WIRE,   115200, 3000000,
 +				0, DISABLE_PM, NULL, bcm43xx, NULL  },
 +
  	{ "ath3k",    0x0000, 0x0000, HCI_UART_ATH3K, 115200, 115200,
  			FLOW_CTL, DISABLE_PM, NULL, ath3k_ps, ath3k_pm  },
- 
+
 @@ -1237,7 +1240,7 @@
  {
  	struct uart_t *u = NULL;
@@ -27,12 +27,12 @@ Last-Update: 2017-04-05
 +++ b/tools/hciattach.h
 @@ -44,7 +45,7 @@
  #define HCI_UART_VND_DETECT	5
- 
+
  #ifndef FIRMWARE_DIR
 -#define FIRMWARE_DIR "/etc/firmware"
 +#define FIRMWARE_DIR "/lib/firmware"
  #endif
- 
+
  int read_hci_event(int fd, unsigned char *buf, int size);
 --- a/tools/hciattach_bcm43xx.c
 +++ b/tools/hciattach_bcm43xx.c
@@ -41,7 +41,7 @@ Last-Update: 2017-04-05
  #include <time.h>
  #include <limits.h>
 +#include <sys/stat.h>
- 
+
  #include "lib/bluetooth.h"
  #include "lib/hci.h"
 @@ -303,9 +304,23 @@
@@ -52,7 +52,7 @@ Last-Update: 2017-04-05
 +	char path[PATH_MAX];
  	DIR *dir;
  	int ret = -1;
- 
+
 +	/* Try an exact match before scanning, otherwise a board without a specific
 +	 * firmware/link may end up loading a specific firmware for another board
 +	 * just because it is encountered first.
@@ -70,16 +70,16 @@ Last-Update: 2017-04-05
  		fprintf(stderr, "Cannot open directory '%s': %s\n",
 @@ -320,8 +335,6 @@
  			break;
- 
+
  		if (entry->d_type & DT_DIR) {
 -			char path[PATH_MAX];
 -
  			if (!strcmp(entry->d_name, "..") || !strcmp(entry->d_name, "."))
  				continue;
- 
+
 @@ -341,8 +354,10 @@
  				break;
- 
+
  			/* found */
 -			snprintf(location, PATH_MAX, "%s/%s", dir_name, entry->d_name);
 -			ret = 0;
@@ -93,7 +93,7 @@ Last-Update: 2017-04-05
 @@ -352,11 +367,32 @@
  	return ret;
  }
- 
+
 +static int get_board_type(char *buf, int buf_size)
 +{
 +	int bytes_read;
@@ -120,13 +120,13 @@ Last-Update: 2017-04-05
 +	char board_specific_name[sizeof(chip_name) + 64];
  	char fw_path[PATH_MAX];
 +	int chip_name_len;
- 
+
  	printf("bcm43xx_init\n");
- 
+
 @@ -366,12 +402,17 @@
  	if (bcm43xx_read_local_name(fd, chip_name, sizeof(chip_name)))
  		return -1;
- 
+
 -	if (bcm43xx_locate_patch(FIRMWARE_DIR, chip_name, fw_path)) {
 -		fprintf(stderr, "Patch not found, continue anyway\n");
 +	/* Grab the board compatible string from Device Tree */
@@ -145,11 +145,11 @@ Last-Update: 2017-04-05
 -
  		if (bcm43xx_load_firmware(fd, fw_path))
  			return -1;
- 
+
 @@ -381,6 +422,7 @@
  			return -1;
  		}
- 
+
 +		sleep(1);
  		if (bcm43xx_reset(fd))
  			return -1;

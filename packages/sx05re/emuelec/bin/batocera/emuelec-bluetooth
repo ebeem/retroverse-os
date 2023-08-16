@@ -101,7 +101,7 @@ class BluetoothCTL:
             if i.startswith("LegacyPairing:"):
                 dev.legacy_pairing = i.split(":")[1].strip() == "yes"
             if i.startswith("RSSI:"):
-                dev.rssi = int(i.split(":")[1].strip())
+                dev.rssi = int(i.split("(")[1].strip()[:-1])
         return dev
 
     @property
@@ -160,7 +160,7 @@ class BluetoothCTL:
                         or "DEL" in line.split()[0]
                     )
                 ):
-                    devs = [x for x in bt.devices() if x.mac == line.split()[2]]
+                    devs = [x for x in bt.devices if x.mac == line.split()[2]]
                     if len(devs) > 0:
                         if "DEL" in line.split()[0]:
                             on_device_removed(devs[0])
@@ -178,6 +178,7 @@ class BluetoothCTL:
     def scanning(self) -> bool:
         return "yes" in ShellIO.execute_lookup(["bluetoothctl", "show"], "Discovering")
 
+    @property
     def devices(self) -> list[BluetoothDevice]:
         devs = ShellIO.execute(["bluetoothctl", "devices"], debug=False)
         return [self._parse_device_info(dev.split()[1]) for dev in devs]
@@ -242,10 +243,17 @@ def on_device_discovered(dev: BluetoothDevice) -> bool:
             )
         )
 
-        if bt.trust(dev) and bt.pair(dev) and bt.connect(dev):
-            print("connected device {}".format(dev.name))
-            return False
-        else:
+        connected = False
+        if bt.trust(dev):
+            print("trusted")
+            if bt.pair(dev):
+                print("paired")
+                if bt.connect(dev):
+                    print("connected device {}".format(dev.name))
+                    connected = False
+                    return False
+
+        if not connected:
             bt.forget(dev)
             print("forgot device {}".format(dev.name))
     elif dev.connected and not dev.trusted and "input-" in dev.icon:
@@ -270,6 +278,7 @@ SCAN_TIME = 60
 ELAPSED_TIME = 0
 UPDATE_INTERVAL = 1
 
+BEEN_IN_GAME = False
 BT_THREAD: Process = None
 
 if __name__ == "__main__":
@@ -293,18 +302,27 @@ if __name__ == "__main__":
             if ELAPSED_TIME > SCAN_TIME:
                 exit()
 
-        if not is_in_game() and not bt.scanning:
-            print("emustation is active now, resuming scan")
+        if not BEEN_IN_GAME:
+            BEEN_IN_GAME = is_in_game()
+
+        # maybe the better check is if bt is not scanning and no controller is connected or scan isn't infinite
+        connected_devs = [dev for dev in bt.devices if dev.connected]
+        if not bt.scanning and (
+            not BEEN_IN_GAME or len(connected_devs) == 0 or SCAN_TIME > 0
+        ):
+            print("resuming scan")
             BT_THREAD = Process(target=bt.scan_async, args=(SCAN_TIME,))
             BT_THREAD.start()
-            ShellIO.execute(["connmanctl", "enable", "wifi"])
+            # ShellIO.execute(["connmanctl", "enable", "wifi"])
 
-        elif is_in_game() and bt.scanning:
-            print("emustation is inactive now, stopping scan")
+        elif (
+            bt.scanning and BEEN_IN_GAME and (len(connected_devs) > 0 or SCAN_TIME < 0)
+        ):
+            print("stopping scan")
             if BT_THREAD is not None:
                 BT_THREAD.terminate()
             bt.scan_stop()
-            ShellIO.execute(["connmanctl", "disable", "wifi"])
+            # ShellIO.execute(["connmanctl", "disable", "wifi"])
 
         time.sleep(UPDATE_INTERVAL)
         ELAPSED_TIME += UPDATE_INTERVAL

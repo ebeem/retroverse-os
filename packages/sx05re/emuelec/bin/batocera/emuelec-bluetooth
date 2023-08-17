@@ -243,17 +243,10 @@ def on_device_discovered(dev: BluetoothDevice) -> bool:
             )
         )
 
-        connected = False
-        if bt.trust(dev):
-            print("trusted")
-            if bt.pair(dev):
-                print("paired")
-                if bt.connect(dev):
-                    print("connected device {}".format(dev.name))
-                    connected = False
-                    return False
-
-        if not connected:
+        if bt.trust(dev) and bt.pair(dev) and bt.connect(dev):
+            print("connected device {}".format(dev.name))
+            return False
+        else:
             bt.forget(dev)
             print("forgot device {}".format(dev.name))
     elif dev.connected and not dev.trusted and "input-" in dev.icon:

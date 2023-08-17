@@ -123,7 +123,7 @@ if [[ "$BTENABLED" != "1" ]]; then
 else
   systemctl restart bluetooth
   # run auto bluetooth pairing in background
-  emuelec-bluetooth -1 >>~/.config/emuelec/logs/bluetooth.log &
+  sleep 10 && emuelec-bluetooth -1 >>~/.config/emuelec/logs/bluetooth.log &
 fi
 
 # What to start at boot?

@@ -1,0 +1,64 @@
+* Product Description
+This product is a retro console with built-in configuration to launch varaiety of games from many class consoles. Supported platforms are: Arcade, Atari 2600, Atari 5200, Atari 7800, MSX, MSX 2, Nintendo Entertainment System (NES), Gameboy, Super Nintendo Entertainment System (SNES), Nintendo 64, Gameboy Color, Gameboy Advance, SG-1000, Master System, Sega Genesis, Game Gear, Saturn, Dreamcast, PlayStation 1 (PSX), PSP.
+
+* Installation Guide
+The box contains:
+- Console Box
+- Power Adapter (100-240v)
+- HDMO Cable
+
+1. Plug the power adapter to a power source and connect it with the console.
+2. Connect the HDMI cable to a TV and the console.
+
+The console will automatically power on and you will be introduced with the main menu once it's connected to a power source.
+
+* Controller Overview
+The officially supported retroverse controller is sold separately, it's recommended to use the official controllers to avoid any inconvinience in button mapping or hotkeys. The layout below demonstrates the layout and the buttons of the retroverse controller.
+
+* Pairing and Connecting Controllers
+It's recommended to use the officially supported controllers for a smoother experience. You only need to pair a controller once, the controller and the console will be synced after and you will be able to immediately connect to the console without pairing again. Below secions explain the difference between pairing and connecting a controller and how to perform both.
+
+** Pairing Controllers
+Pairing a controller is a process in which the console and the controller authenticate each other. It's required to pair a controller in order to be able to connect it and use it.
+
+1. Power on the console, the console activates pair-mode immediately when you power it on until you launch a game, during this period, you are allowed to pair as many controllers as needed.
+2. Enter pairing mode in your controller by holding the home button for 3 seconds until the player indicator leds start blinking rapidly.
+
+After a couple of seconds, the controller will be paired and connected automatically, and the player led will stop blinking and it will indicate the number of the controller. You only need to perform pairing once per controller, after a successful pairing, you can connect to the console at anytime including in-game.
+
+** Connecting Controllers
+Connecting a controller is the process of powering on the controller and informing the console of its availability. The controller must be already paired in order for it to be able to connect to the console.
+
+1. Press the home button for less than a second until the player indicator leds start blinking slowly.
+
+After a couple of seconds, the controller will be connected. If you tried connecting 3 times and the controller didn't connect, please pair the controller again as suggested in the Pairing Controller section.
+
+* Navigating the Platforms
+When you power the console, you will be introduced with a list of the available platforms. navigate to the target platform using the controller's (L Stick) or (D-pad) up and down. Once you reach the target platform, press the controller's (A) button to view the games available under the platform.
+
+* Navigating the Games
+When you select a platform, you will be introduced with a list of the available games under that platform. navigate to the target game using the controller's (L Stick) or (D-pad) up and down. (Hint: use the controller's (ZL) and (ZR) buttons to quickly navigate games). Once you reach the target game, press the controller's (A) button to play the game. To go back to the platforms menu, press the controller's (B) button
+
+* In-game Functions
+While in-game, the frame that surrounds the game will illustrate the controller mapping which might differ based on the running platform. To access functions available under any platform, simply press the controller's (Home) button. Available functions are:
+
+- Resume: resumes the game as it is paused while the in-game functions are visible
+- Restart: restarts the game (unsaved states will be lost)
+- Close Content: quits the game and go back to games menu.
+- State Slot: switch the slot in which save and load state will be performed
+- Save State: saves the current state of the game into selected state slot
+- Load State: loads the selected state slot into the game
+- Undo Load State: undo last performed load state
+- Undo Save State: undo last performed save state
+
+* In-game Hotkeys
+While in-game, hotkeys can be used to quicky call some functions. Most available hotkeys require the controller's (O) button to be held while pressing the hotkey.
+
+- (O) + (D-pad's right): toggles on/off fast forward
+- (O) + (D-pad's up): goes to the next state slot
+- (O) + (D-pad's down): goes to the previous state slot
+- (O) + (R): saves state
+- (O) + (L): loads state
+
+- (Start) + (Select): quits game
+- (L3) + (R3): show home menu

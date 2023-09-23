@@ -19,8 +19,8 @@
 ################################################################################
 
 PKG_NAME="retroarch-overlays"
-PKG_VERSION="a5497b81560d1d0c3868cebe46305edbecaa3e0f"
-PKG_SHA256="7a2c3beeb4eff88f892a7ba181010191a69daec4969620ad5cec85aa31bcbf4f"
+PKG_VERSION="115d8670c2e032e4a41ba45f766f5cfd9dae28b8"
+PKG_SHA256="7db2f63625372e52a0123158f6ee0e354668b34afd467c9cb38719221b53d129"
 PKG_LICENSE="GPL"
 PKG_SITE="https://github.com/libretro/common-overlays"
 PKG_URL="https://github.com/libretro/common-overlays/archive/$PKG_VERSION.tar.gz"
@@ -36,4 +36,3 @@ makeinstall_target() {
   rm -rf ${PKG_BUILD}/keyboards
   cp -r ${PKG_BUILD}/* $INSTALL/usr/share/retroarch-overlays
 }
-

@@ -35,7 +35,7 @@ unpack() {
 pre_configure_target() {
   CFLAGS+="-DLINUX -DEGL_API_FB -fcommon"
   CPPFLAGS+="-DLINUX -DEGL_API_FB"
-  
+
   sed -i "s|BOARD :=.*|BOARD = N2|g" Makefile
   sed -i "s|odroid64|emuelec64|g" Makefile
 }

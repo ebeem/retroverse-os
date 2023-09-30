@@ -242,8 +242,7 @@ configure_package() {
                          -DPYTHON_EXECUTABLE=${TOOLCHAIN}/bin/${PKG_PYTHON_VERSION} \
                          -DPYTHON_INCLUDE_DIRS=${SYSROOT_PREFIX}/usr/include/${PKG_PYTHON_VERSION} \
                          -DGIT_VERSION=${PKG_VERSION} \
-                         -DFFMPEG_PATH=${SYSROOT_PREFIX}/usr \
-                         -DENABLE_INTERNAL_FFMPEG=OFF \
+                         -DENABLE_INTERNAL_FFMPEG=ON \
                          -DENABLE_INTERNAL_CROSSGUID=OFF \
                          -DENABLE_INTERNAL_UDFREAD=OFF \
                          -DENABLE_INTERNAL_SPDLOG=OFF \

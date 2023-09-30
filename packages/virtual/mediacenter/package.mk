@@ -7,15 +7,15 @@ PKG_VERSION=""
 PKG_LICENSE="GPL"
 PKG_SITE="https://libreelec.tv"
 PKG_URL=""
-PKG_DEPENDS_TARGET="toolchain ${MEDIACENTER}"
+PKG_DEPENDS_TARGET="toolchain emuelec kodi"
 PKG_SECTION="virtual"
 PKG_LONGDESC="Mediacenter: Metapackage"
 
-if [ "${MEDIACENTER}" = "kodi" ]; then
-  PKG_DEPENDS_TARGET+=" ${MEDIACENTER}-theme-${SKIN_DEFAULT}"
+if [ "kodi" = "kodi" ]; then
+  PKG_DEPENDS_TARGET+=" kodi-theme-${SKIN_DEFAULT}"
 
   for i in ${SKINS}; do
-    PKG_DEPENDS_TARGET+=" ${MEDIACENTER}-theme-${i}"
+    PKG_DEPENDS_TARGET+=" kodi-theme-${i}"
   done
 
 # python-based tool for kodi management

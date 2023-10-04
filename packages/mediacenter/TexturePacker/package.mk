@@ -12,10 +12,10 @@ PKG_LONGDESC="kodi-platform:"
 
 PKG_CMAKE_SCRIPT="$(get_build_dir kodi)/tools/depends/native/TexturePacker/CMakeLists.txt"
 
-PKG_CMAKE_OPTS_HOST="-Wno-dev"
+PKG_CMAKE_OPTS_HOST="-Wno-dev -DKODI_SOURCE_DIR=$(get_build_dir kodi)"
 
 pre_configure_host() {
-  export CXXFLAGS="${CXXFLAGS} -std=c++11 -DTARGET_POSIX -DTARGET_LINUX -D_LINUX -I$(get_build_dir kodi)/xbmc/platform/linux"
+  export CXXFLAGS="${CXXFLAGS} -std=c++17 -DTARGET_POSIX -DTARGET_LINUX -D_LINUX"
 }
 
 makeinstall_host() {

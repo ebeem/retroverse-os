@@ -3,12 +3,12 @@
 # Copyright (C) 2017-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="kodi"
-PKG_VERSION="20.1-Nexus"
-PKG_SHA256="cd4158b2bc2d9593ad2f5c1cd2494957ab726b13d8379bbfb09d7d36df7b7d7e"
+PKG_VERSION="21.0a3-Omega"
+PKG_SHA256="1b4e1ef18a53897667e4a26122f82fc7a196952a3377868afe036cb9ed27571d"
 PKG_LICENSE="GPL"
 PKG_SITE="http://www.kodi.tv"
 PKG_URL="https://github.com/xbmc/xbmc/archive/${PKG_VERSION}.tar.gz"
-PKG_DEPENDS_TARGET="toolchain JsonSchemaBuilder:host TexturePacker:host Python3 zlib systemd lzo pcre swig:host libass curl fontconfig fribidi tinyxml libjpeg-turbo freetype libcdio taglib libxml2 libxslt rapidjson sqlite ffmpeg crossguid libdvdnav libfmt lirc libfstrcmp flatbuffers:host flatbuffers libudfread spdlog"
+PKG_DEPENDS_TARGET="toolchain JsonSchemaBuilder:host TexturePacker:host Python3 zlib systemd lzo pcre swig:host libass curl fontconfig fribidi tinyxml tinyxml2 libjpeg-turbo freetype libcdio taglib libxml2 libxslt rapidjson sqlite ffmpeg crossguid libdvdnav libfmt lirc libfstrcmp flatbuffers:host flatbuffers libudfread spdlog"
 PKG_DEPENDS_HOST="toolchain"
 PKG_LONGDESC="A free and open source cross-platform media player."
 PKG_BUILD_FLAGS="+speed"
@@ -213,7 +213,7 @@ configure_package() {
   fi
 
   if [ ! "${KODIPLAYER_DRIVER}" = "default" -a "${DISPLAYSERVER}" = "no" ]; then
-    PKG_DEPENDS_TARGET+=" ${KODIPLAYER_DRIVER} libinput libxkbcommon"
+    PKG_DEPENDS_TARGET+=" ${KODIPLAYER_DRIVER} libinput libxkbcommon libdisplay-info"
     if [ "${OPENGLES_SUPPORT}" = yes -a "${KODIPLAYER_DRIVER}" = "${OPENGLES}" ]; then
       KODI_PLATFORM="-DCORE_PLATFORM_NAME=gbm -DAPP_RENDER_SYSTEM=gles"
       CFLAGS+=" -DEGL_NO_X11"
@@ -237,12 +237,12 @@ configure_package() {
   PKG_CMAKE_OPTS_TARGET="-DNATIVEPREFIX=${TOOLCHAIN} \
                          -DWITH_TEXTUREPACKER=${TOOLCHAIN}/bin/TexturePacker \
                          -DWITH_JSONSCHEMABUILDER=${TOOLCHAIN}/bin/JsonSchemaBuilder \
-                         -DDEPENDS_PATH=${PKG_BUILD}/depends \
                          -DSWIG_EXECUTABLE=${TOOLCHAIN}/bin/swig \
                          -DPYTHON_EXECUTABLE=${TOOLCHAIN}/bin/${PKG_PYTHON_VERSION} \
                          -DPYTHON_INCLUDE_DIRS=${SYSROOT_PREFIX}/usr/include/${PKG_PYTHON_VERSION} \
                          -DGIT_VERSION=${PKG_VERSION} \
-                         -DENABLE_INTERNAL_FFMPEG=ON \
+                         -DFFMPEG_PATH=${SYSROOT_PREFIX}/usr \
+                         -DENABLE_INTERNAL_FFMPEG=OFF \
                          -DENABLE_INTERNAL_CROSSGUID=OFF \
                          -DENABLE_INTERNAL_UDFREAD=OFF \
                          -DENABLE_INTERNAL_SPDLOG=OFF \
@@ -333,27 +333,23 @@ post_makeinstall_target() {
     cp ${PKG_DIR}/scripts/kodi-safe-mode ${INSTALL}/usr/lib/kodi
     cp ${PKG_DIR}/scripts/kodi.sh ${INSTALL}/usr/lib/kodi
 
-  if [ "${PROJECT}" = "Amlogic-ce" ]; then
-    cp ${PKG_DIR}/scripts/aml-wait-for-dispcap.sh ${INSTALL}/usr/lib/kodi
-  fi
-
     # Configure safe mode triggers - default 5 restarts within 900 seconds/15 minutes
     sed -e "s|@KODI_MAX_RESTARTS@|${KODI_MAX_RESTARTS:-5}|g" \
         -e "s|@KODI_MAX_SECONDS@|${KODI_MAX_SECONDS:-900}|g" \
         -i ${INSTALL}/usr/lib/kodi/kodi.sh
 
     if [ "${KODI_PIPEWIRE_SUPPORT}" = "yes" ]; then
-      KODI_AE_SINK="PIPEWIRE"
+      KODI_AUDIO_ARGS="--audio-backend=pipewire"
     elif [ "${KODI_PULSEAUDIO_SUPPORT}" = "yes" -a "${KODI_ALSA_SUPPORT}" = "yes" ]; then
-      KODI_AE_SINK="ALSA+PULSE"
+      KODI_AUDIO_ARGS="--audio-backend=alsa+pulseaudio"
     elif [ "${KODI_PULSEAUDIO_SUPPORT}" = "yes" -a "${KODI_ALSA_SUPPORT}" != "yes" ]; then
-      KODI_AE_SINK="PULSE"
+      KODI_AUDIO_ARGS="--audio-backend=pulseaudio"
     elif [ "${KODI_PULSEAUDIO_SUPPORT}" != "yes" -a "${KODI_ALSA_SUPPORT}" = "yes" ]; then
-      KODI_AE_SINK="ALSA"
+      KODI_AUDIO_ARGS="--audio-backend=alsa"
     fi
 
     # adjust audio output device to what was built
-    sed "s/@KODI_AE_SINK@/${KODI_AE_SINK}/" ${PKG_DIR}/config/kodi.conf.in > ${INSTALL}/usr/lib/kodi/kodi.conf
+    sed "s/@KODI_AUDIO_ARGS@/${KODI_AUDIO_ARGS}/" ${PKG_DIR}/config/kodi.conf.in > ${INSTALL}/usr/lib/kodi/kodi.conf
 
     # set default display environment
     if [ "${DISPLAYSERVER}" = "x11" ]; then
@@ -363,7 +359,7 @@ post_makeinstall_target() {
     fi
 
     # nvidia: Enable USLEEP to reduce CPU load while rendering
-    if listcontains "${GRAPHIC_DRIVERS}" "nvidia" || listcontains "${GRAPHIC_DRIVERS}" "nvidia-legacy"; then
+    if listcontains "${GRAPHIC_DRIVERS}" "nvidia"; then
       echo "__GL_YIELD=USLEEP" >> ${INSTALL}/usr/lib/kodi/kodi.conf
     fi
 
@@ -410,6 +406,12 @@ post_makeinstall_target() {
 
   mkdir -p ${INSTALL}/usr/cache/libreelec
     cp ${PKG_DIR}/config/network_wait ${INSTALL}/usr/cache/libreelec
+
+  # GBM: install udev rule to ignore the power button in libinput/kodi so logind can handle it
+  if [ "${DISPLAYSERVER}" = "no" ]; then
+    mkdir -p ${INSTALL}/usr/lib/udev/rules.d/
+    cp ${PKG_DIR}/config/70-libinput-ignore-power-button.rules ${INSTALL}/usr/lib/udev/rules.d/
+  fi
 
   # update addon manifest
   ADDON_MANIFEST=${INSTALL}/usr/share/kodi/system/addon-manifest.xml

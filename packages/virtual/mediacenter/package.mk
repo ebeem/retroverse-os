@@ -20,6 +20,7 @@ if [ "kodi" = "kodi" ]; then
 
 # python-based tool for kodi management
   PKG_DEPENDS_TARGET+=" texturecache.py"
+  PKG_DEPENDS_TARGET+=" texturecache.py"
 
 # some python stuff needed for various addons
   PKG_DEPENDS_TARGET="${PKG_DEPENDS_TARGET} Pillow \
@@ -33,6 +34,7 @@ if [ "kodi" = "kodi" ]; then
 
 # other packages
   PKG_DEPENDS_TARGET+=" xmlstarlet"
+  PKG_DEPENDS_TARGET+=" inputstream.adaptive"
 
   if [ "${JOYSTICK_SUPPORT}" = "yes" ]; then
     PKG_DEPENDS_TARGET+=" peripheral.joystick"

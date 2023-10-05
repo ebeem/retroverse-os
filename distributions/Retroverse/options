@@ -244,7 +244,7 @@
   REMOTE_SUPPORT="yes"
 
 # IR remote keymaps supported in default config
-  IR_REMOTE_KEYMAPS="rc6_mce xbox_360 xbox_one odroid wetek_hub wetek_play_2 tanix"
+  IR_REMOTE_KEYMAPS="rc6_mce xbox_360 xbox_one odroid wetek_hub wetek_play_2 tanix h96"
 
 # build and install Joystick support (yes / no)
   JOYSTICK_SUPPORT="yes"

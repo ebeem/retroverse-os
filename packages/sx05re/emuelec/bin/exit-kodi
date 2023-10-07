@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Source predefined functions and variables
+. /etc/profile
+
+blank_buffer
+systemctl start emustation
+blank_buffer
+systemctl stop kodi

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<buttonmap>
+    <device name="Microsoft X-Box 360 pad" provider="linux" buttoncount="11" axiscount="8">
+        <controller id="game.controller.snes">
+            <feature name="a" axis="-7" />
+            <feature name="b" axis="-6" />
+            <feature name="x" button="0" />
+            <feature name="y" axis="+6" />
+        </controller>
+        <controller id="game.controller.switch">
+            <feature name="a" axis="+7" />
+            <feature name="b" axis="-7" />
+        </controller>
+    </device>
+</buttonmap>

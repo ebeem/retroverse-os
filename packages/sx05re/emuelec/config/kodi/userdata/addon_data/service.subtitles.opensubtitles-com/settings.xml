@@ -1,0 +1,8 @@
+<settings version="2">
+    <setting id="OSuser">hidiw53541</setting>
+    <setting id="OSpass">hidiw53541@E</setting>
+    <setting id="APIKey" default="true">qo2wQs1PXwIHJsXvIiWXu1ZbVjaboPh6</setting>
+    <setting id="hearing_impaired" default="true">exclude</setting>
+    <setting id="foreign_parts_only" default="true">include</setting>
+    <setting id="machine_translated" default="true">exclude</setting>
+</settings>

@@ -1,0 +1,18 @@
+<settings>
+    <setting id="background-slideshow" type="bool">false</setting>
+    <setting id="text-autoscroll" type="bool">false</setting>
+    <setting id="debug-grid" type="bool">false</setting>
+    <setting id="background-visibiltyhigh" type="bool">false</setting>
+    <setting id="background-visibiltymed" type="bool">false</setting>
+    <setting id="show-touchcontrols" type="bool">false</setting>
+    <setting id="lock-screensettings" type="bool">false</setting>
+    <setting id="blurenabled" type="bool">false</setting>
+    <setting id="debug-info" type="bool">false</setting>
+    <setting id="homemenuvertical" type="bool">false</setting>
+    <setting id="background-playingmedia" type="bool">false</setting>
+    <setting id="background-fanarts" type="bool">false</setting>
+    <setting id="media-overlay" type="bool">false</setting>
+    <setting id="show-letterbar" type="bool">false</setting>
+    <setting id="show-scrollbar" type="string"></setting>
+    <setting id="background-custom" type="string"></setting>
+</settings>

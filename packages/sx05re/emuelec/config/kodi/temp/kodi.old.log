@@ -1,0 +1,541 @@
+﻿2023-10-07 13:22:58.707 T:226493    info <general>: -----------------------------------------------------------------------
+2023-10-07 13:22:58.707 T:226493    info <general>: Starting Kodi (20.1 (20.1.0) Git:4373de6ad55d7e33d82868ede8f20a3cc7b6c2cd). Platform: Linux ARM 64-bit
+2023-10-07 13:22:58.707 T:226493    info <general>: Using Release Kodi x64
+2023-10-07 13:22:58.707 T:226493    info <general>: Kodi compiled 2023-09-30 by GCC 12.2.0 for Linux ARM 64-bit version 4.9.255 (264703)
+2023-10-07 13:22:58.707 T:226493    info <general>: Running on Amlogic with Retroverse (1.0): 1.0-Classic_devel_20231006005209, kernel: Linux ARM 64-bit version 4.9.269
+2023-10-07 13:22:58.707 T:226493    info <general>: FFmpeg version/source: 4.4.1-Kodi
+2023-10-07 13:22:58.707 T:226493    info <general>: Host CPU: Amlogic S905X4 rev d, 4 cores available
+2023-10-07 13:22:58.707 T:226493    info <general>: ARM Features: Neon enabled
+2023-10-07 13:22:58.707 T:226493    info <general>: special://xbmc/ is mapped to: /usr/share/kodi/
+2023-10-07 13:22:58.707 T:226493    info <general>: special://xbmcbin/ is mapped to: /usr/lib/kodi
+2023-10-07 13:22:58.707 T:226493    info <general>: special://xbmcbinaddons/ is mapped to: /usr/lib/kodi/addons
+2023-10-07 13:22:58.707 T:226493    info <general>: special://masterprofile/ is mapped to: /storage/.kodi/userdata
+2023-10-07 13:22:58.707 T:226493    info <general>: special://envhome/ is mapped to: /storage
+2023-10-07 13:22:58.707 T:226493    info <general>: special://home/ is mapped to: /storage/.kodi
+2023-10-07 13:22:58.707 T:226493    info <general>: special://temp/ is mapped to: /storage/.kodi/temp
+2023-10-07 13:22:58.707 T:226493    info <general>: special://logpath/ is mapped to: /storage/.kodi/temp
+2023-10-07 13:22:58.707 T:226493    info <general>: Webserver extra whitelist paths: 
+2023-10-07 13:22:58.707 T:226493    info <general>: The executable running is: /usr/lib/kodi/kodi.bin
+2023-10-07 13:22:58.707 T:226493    info <general>: Local hostname: Retroverse
+2023-10-07 13:22:58.707 T:226493    info <general>: Log File is located: /storage/.kodi/temp/kodi.log
+2023-10-07 13:22:58.707 T:226493    info <general>: -----------------------------------------------------------------------
+2023-10-07 13:22:58.707 T:226493    info <general>: loading settings
+2023-10-07 13:22:58.708 T:226493    info <general>: special://profile/ is mapped to: special://masterprofile/
+2023-10-07 13:22:58.733 T:226493    info <general>: Loaded settings file from special://xbmc/system/advancedsettings.xml
+2023-10-07 13:22:58.734 T:226493    info <general>: Contents of special://xbmc/system/advancedsettings.xml are...
+                                                   <?xml version="1.0" encoding="utf-8" ?>
+                                                   <advancedsettings>
+                                                     <cputempcommand>/usr/bin/cputemp</cputempcommand>
+                                                     <gputempcommand>/usr/bin/gputemp</gputempcommand>
+                                                     <showexitbutton>false</showexitbutton>
+                                                     <remotedelay>1</remotedelay>
+                                                     <samba>
+                                                       <clienttimeout>30</clienttimeout>
+                                                     </samba>
+                                                     <splash>false</splash>
+                                                   </advancedsettings>
+                                                   
+2023-10-07 13:22:58.734 T:226493 warning <CSettingsManager>: missing version attribute
+2023-10-07 13:22:58.735 T:226493    info <general>: No settings file to load (special://masterprofile/advancedsettings.xml)
+2023-10-07 13:22:58.735 T:226493    info <general>: Default Video Player: VideoPlayer
+2023-10-07 13:22:58.735 T:226493    info <general>: Default Audio Player: paplayer
+2023-10-07 13:22:58.736 T:226493    info <general>: Disabled debug logging due to GUI setting. Level 0.
+2023-10-07 13:22:58.736 T:226493    info <general>: Log level changed to "info"
+2023-10-07 13:22:58.736 T:226493    info <general>: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
+2023-10-07 13:22:58.739 T:226493    info <general>: creating subdirectories
+2023-10-07 13:22:58.739 T:226493    info <general>: userdata folder: special://masterprofile/
+2023-10-07 13:22:58.739 T:226493    info <general>: recording folder: 
+2023-10-07 13:22:58.739 T:226493    info <general>: screenshots folder: /storage/screenshots/
+2023-10-07 13:22:58.746 T:226493    info <general>: Running database version Addons33
+2023-10-07 13:22:58.832 T:226493    info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.aac v1.0.2 installed
+2023-10-07 13:22:58.832 T:226493    info <general>: CAddonMgr::FindAddons: audioencoder.kodi.builtin.wma v1.0.2 installed
+2023-10-07 13:22:58.833 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.default v1.0.40 installed
+2023-10-07 13:22:58.833 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.keyboard v1.1.30 installed
+2023-10-07 13:22:58.833 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.mouse v1.0.23 installed
+2023-10-07 13:22:58.833 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.ps.dualanalog v1.0.31 installed
+2023-10-07 13:22:58.833 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.ps.dualshock v1.0.32 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.ps.gamepad v1.0.27 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.remote v1.0.22 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.snes v1.0.39 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: game.controller.switch v1.0.40 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: inputstream.adaptive v20.3.5 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.audioengine v1.1.1 installed
+2023-10-07 13:22:58.834 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.filesystem v1.1.8 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.general v1.0.5 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.gui v5.15.0 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.main v2.0.2 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.network v1.0.4 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.global.tools v1.0.4 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audiodecoder v4.0.0 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.audioencoder v3.0.0 installed
+2023-10-07 13:22:58.835 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.game v3.0.0 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.imagedecoder v3.0.1 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.inputstream v3.2.0 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.peripheral v2.0.0 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.pvr v8.2.0 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.screensaver v2.2.0 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.vfs v3.0.1 installed
+2023-10-07 13:22:58.836 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.videocodec v2.0.3 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: kodi.binary.instance.visualization v4.0.0 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: kodi.resource v1.0.0 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: metadata.album.universal v3.1.9 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: metadata.artists.universal v4.3.11 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: metadata.common.allmusic.com v3.2.2 installed
+2023-10-07 13:22:58.837 T:226493    info <general>: CAddonMgr::FindAddons: metadata.common.fanart.tv v3.6.4 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.common.musicbrainz.org v2.2.4 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.common.theaudiodb.com v2.0.3 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.generic.albums v1.0.14 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.generic.artists v1.0.14 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.local v1.0.1 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.themoviedb.org.python v2.1.0 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: metadata.tvshows.themoviedb.org.python v1.6.5 installed
+2023-10-07 13:22:58.838 T:226493    info <general>: CAddonMgr::FindAddons: peripheral.joystick v20.1.2 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.chainsgenocide v0.0.9 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.ghosttv v1.1 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.homelander v1.2.0 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.luffy v1.0.1 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.thecrew v2.0.5 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.themoviedb.helper v4.10.14 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.twitch v3.0.2 installed
+2023-10-07 13:22:58.839 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.worldstarhiphop v1.0.14+matrix.1 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: plugin.video.youtube v7.0.1 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: repository.coreelec v1.0 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: repository.thecrew v0.3.4 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: repository.xbmc.org v9.9.0 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: resource.fonts.copacetic v1.0.2 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: resource.images.classificationicons.colour v0.0.3 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: resource.images.weathericons.default v1.1.9 installed
+2023-10-07 13:22:58.840 T:226493    info <general>: CAddonMgr::FindAddons: resource.images.weathericons.white v0.0.6 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: resource.language.ar_sa v10.0.49 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: resource.language.en_gb v2.0.2 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: resource.uisounds.amber v1.0.0 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: resource.uisounds.apptv v1.0.4 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: resource.uisounds.kodi v1.0.1 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.black v1.0.34 installed
+2023-10-07 13:22:58.841 T:226493    info <general>: CAddonMgr::FindAddons: screensaver.xbmc.builtin.dim v1.0.66 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.chainsgenocide.artwork v1.0.3 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.common.plugin.cache v3.0.0 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.embuary.helper v2.0.8 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.favourites v8.1.2 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.homelander.artwork v1.0.4 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.image.resource.select v3.0.2 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.module.addon.signals v0.0.6+matrix.1 installed
+2023-10-07 13:22:58.842 T:226493    info <general>: CAddonMgr::FindAddons: script.module.beautifulsoup4 v4.12.2 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.certifi v2023.5.7 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.chainsgenocidescrapers v1.1.3 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.chardet v5.1.0 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.future v0.18.2+matrix.1 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.homelanderscrapers v1.2.7 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.html2text v2020.1.16+matrix.2 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.html5lib v1.1.0+matrix.1 installed
+2023-10-07 13:22:58.843 T:226493    info <general>: CAddonMgr::FindAddons: script.module.idna v3.4.0 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.infotagger v0.0.7 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.inputstreamhelper v0.6.1+matrix.1 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.kodi-six v0.1.3.1 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.pil v5.1.0 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.pycryptodome v3.4.3 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.python.twitch v3.0.2 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.requests v2.31.0 installed
+2023-10-07 13:22:58.844 T:226493    info <general>: CAddonMgr::FindAddons: script.module.resolveurl v5.1.111 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.routing v0.2.3+matrix.1 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.simpleeval v0.9.10 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.simplejson v3.19.1+matrix.1 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.six v1.15.0+matrix.1 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.soupsieve v2.4.1 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.thecrew v2.0.8 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.unidecode v1.3.6 installed
+2023-10-07 13:22:58.845 T:226493    info <general>: CAddonMgr::FindAddons: script.module.urllib3 v1.26.16+matrix.1 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: script.module.webencodings v0.5.1+matrix.2 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: script.module.youtube.dl v21.303.0+matrix.1 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: script.skin.helper.colorpicker v2.0.1 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: script.skinshortcuts v2.0.3 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: script.thecrew.artwork v2.0.0 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: service.autosubs v1.1.1 installed
+2023-10-07 13:22:58.846 T:226493    info <general>: CAddonMgr::FindAddons: service.library.data.provider v0.4.2 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: service.subtitles.opensubtitles v5.1.4 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: service.subtitles.opensubtitles-com v1.0.2 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: skin.eminence.2 v4.1.0 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: skin.estuary v3.0.10 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: webinterface.default v19.x-2.4.8 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.addon v20.1.0 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.core v0.1.0 installed
+2023-10-07 13:22:58.847 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.gui v5.16.0 installed
+2023-10-07 13:22:58.848 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.json v13.0.0 installed
+2023-10-07 13:22:58.848 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.metadata v2.1.0 installed
+2023-10-07 13:22:58.848 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.python v3.0.1 installed
+2023-10-07 13:22:58.848 T:226493    info <general>: CAddonMgr::FindAddons: xbmc.webinterface v1.0.0 installed
+2023-10-07 13:22:58.854 T:226493    info <general>: Selected Logind/UPower as PowerSyscall
+2023-10-07 13:22:58.855 T:226493   error <general>: DBus error: org.freedesktop.DBus.Error.ServiceUnknown - The name org.freedesktop.UPower was not provided by any .service files
+2023-10-07 13:22:58.855 T:226493    info <general>: LogindUPowerSyscall - UPower not found, battery information will not be available
+2023-10-07 13:22:58.878 T:226493    info <general>: CKeyboardLayoutManager: loading keyboard layouts from special://xbmc/system/keyboardlayouts...
+2023-10-07 10:22:59.048 T:226493    info <general>: RetroPlayer[RENDER]: Registering renderer factory for OpenGLES
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 480 with 720 x 480i @ 60.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 480 with 720 x 480i @ 59.940056 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 576 with 720 x 576i @ 50.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 480 with 720 x 480 @ 60.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 480 with 720 x 480 @ 59.940056 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 720 x 576 with 720 x 576 @ 50.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1280 x 720 with 1280 x 720 @ 60.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1280 x 720 with 1280 x 720 @ 59.940056 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080i @ 60.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080i @ 59.940056 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 60.000000 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 59.940056 Hz
+2023-10-07 10:22:59.081 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 120.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1280 x 720 with 1280 x 720 @ 50.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080i @ 50.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 30.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 29.970028 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 50.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 25.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 24.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1920 x 1080 with 1920 x 1080 @ 23.976023 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 640 x 480 with 640 x 480 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 640 x 480 with 640 x 480 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 800 x 600 with 800 x 600 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 800 x 600 with 800 x 600 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1024 x 768 with 1024 x 768 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1024 x 768 with 1024 x 768 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1280 x 960 with 1280 x 960 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1280 x 960 with 1280 x 960 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1280 x 1024 with 1280 x 1024 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1280 x 1024 with 1280 x 1024 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1400 x 1050 with 1400 x 1050 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1400 x 1050 with 1400 x 1050 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1440 x 900 with 1440 x 900 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1440 x 900 with 1440 x 900 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1600 x 900 with 1600 x 900 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1600 x 900 with 1600 x 900 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1600 x 1080 with 1600 x 1200 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1600 x 1080 with 1600 x 1200 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1680 x 1050 with 1680 x 1050 @ 60.000000 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found resolution 1680 x 1050 with 1680 x 1050 @ 59.940056 Hz
+2023-10-07 10:22:59.082 T:226493    info <general>: Found (1920x1080@59.940056) at 27, setting to RES_DESKTOP at 16
+2023-10-07 10:22:59.085 T:226493    info <general>: EGL_VERSION = 1.4 Bifrost-"git"
+2023-10-07 10:22:59.085 T:226493    info <general>: EGL_VENDOR = ARM
+2023-10-07 10:22:59.085 T:226493    info <general>: EGL_EXTENSIONS = EGL_KHR_partial_update EGL_EXT_image_dma_buf_import EGL_KHR_config_attribs EGL_KHR_image EGL_KHR_image_base EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_KHR_gl_colorspace EGL_KHR_get_all_proc_addresses EGL_IMG_context_priority EGL_KHR_no_config_context EGL_ARM_pixmap_multisample_discard EGL_ARM_implicit_external_sync EGL_KHR_gl_texture_2D_image EGL_KHR_gl_renderbuffer_image EGL_KHR_create_context EGL_KHR_surfaceless_context EGL_KHR_gl_texture_cubemap_image EGL_EXT_create_context_robustness
+2023-10-07 10:22:59.085 T:226493    info <general>: EGL_CLIENT_EXTENSIONS = EGL_EXT_client_extensions EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses
+2023-10-07 10:22:59.087 T:226493    info <general>: CApplication::CreateGUI - using the aml windowing system
+2023-10-07 10:22:59.100 T:226493    info <general>: Checking resolution 16
+2023-10-07 10:22:59.102 T:226493    info <general>: GL_VENDOR = ARM
+2023-10-07 10:22:59.102 T:226493    info <general>: GL_RENDERER = Mali-G31
+2023-10-07 10:22:59.102 T:226493    info <general>: GL_VERSION = OpenGL ES 3.2 git.c8adbf9.ad00b04c1b60847de257177231dc1a53
+2023-10-07 10:22:59.102 T:226493    info <general>: GL_SHADING_LANGUAGE_VERSION = OpenGL ES GLSL ES 3.20
+2023-10-07 10:22:59.102 T:226493    info <general>: GL_EXTENSIONS = GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_standard_derivatives GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_texture_npot GL_OES_vertex_half_float GL_OES_required_internalformat GL_OES_vertex_array_object GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_type_2_10_10_10_REV GL_OES_fbo_render_mipmap GL_OES_element_index_uint GL_EXT_shadow_samplers GL_OES_texture_compression_astc GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_sliced_3d GL_EXT_texture_compression_astc_decode_mode GL_EXT_texture_compression_astc_decode_mode_rgb9e5 GL_KHR_debug GL_EXT_occlusion_query_boolean GL_EXT_disjoint_timer_query GL_EXT_blend_minmax GL_EXT_discard_framebuffer GL_OES_get_program_binary GL_OES_texture_3D GL_EXT_texture_storage GL_EXT_multisampled_render_to_texture GL_OES_surfaceless_context GL_OES_texture_stencil8 GL_EXT_shader_pixel_local_storage GL_ARM_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_ARM_mali_program_binary GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_texture_sRGB_decode GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_texture_storage_multisample_2d_array GL_OES_shader_image_atomic GL_EXT_robustness GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_OES_tessellation_shader GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_EXT_geometry_shader GL_OES_geometry_shader GL_ANDROID_extension_pack_es31a GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_copy_image GL_OES_copy_image GL_EXT_shader_non_constant_global_initializers GL_EXT_color_buffer_half_float GL_EXT_color_buffer_float GL_EXT_YUV_target GL_OVR_multiview GL_OVR_multiview2 GL_OVR_multiview_multisampled_render_to_texture GL_KHR_robustness GL_KHR_robust_buffer_access_behavior GL_EXT_draw_elements_base_vertex GL_OES_draw_elements_base_vertex GL_EXT_buffer_storage 
+2023-10-07 10:22:59.617 T:226493    info <general>: GLES: Maximum texture width: 8192
+2023-10-07 10:22:59.618 T:226493    info <general>: load keymapping
+2023-10-07 10:22:59.620 T:226493    info <general>: Loading special://xbmc/system/keymaps/appcommand.xml
+2023-10-07 10:22:59.620 T:226493    info <general>: Loading special://xbmc/system/keymaps/customcontroller.AppleRemote.xml
+2023-10-07 10:22:59.622 T:226493    info <general>: Loading special://xbmc/system/keymaps/customcontroller.Harmony.xml
+2023-10-07 10:22:59.624 T:226493    info <general>: Loading special://xbmc/system/keymaps/customcontroller.SiriRemote.xml
+2023-10-07 10:22:59.625 T:226493    info <general>: Loading special://xbmc/system/keymaps/gamepad.xml
+2023-10-07 10:22:59.627 T:226493    info <general>: Loading special://xbmc/system/keymaps/joystick.xml
+2023-10-07 10:22:59.630 T:226493    info <general>: Loading special://xbmc/system/keymaps/keyboard.xml
+2023-10-07 10:22:59.635 T:226493    info <general>: Loading special://xbmc/system/keymaps/mouse.xml
+2023-10-07 10:22:59.636 T:226493    info <general>: Loading special://xbmc/system/keymaps/remote.xml
+2023-10-07 10:22:59.640 T:226493    info <general>: Loading special://xbmc/system/keymaps/touchscreen.xml
+2023-10-07 10:22:59.642 T:226493    info <general>: GUI format 1920x1080, Display 1920x1080 @ 59.94 - Full Screen
+2023-10-07 10:22:59.654 T:226673    info <general>: CAESinkALSA - Unable to open device "surround51" for playback
+2023-10-07 10:22:59.656 T:226673    info <general>: CAESinkALSA - Unable to open device "surround40" for playback
+2023-10-07 10:22:59.656 T:226673    info <general>: CAESinkALSA - Unable to open device "surround51" for playback
+2023-10-07 10:22:59.685 T:226673    info <general>: CAESinkALSA - Unable to open device "hdmi:CARD=AMLAUGESOUND,DEV=0" for playback
+2023-10-07 10:22:59.690 T:226673 warning <general>: Pulseaudio module module-allow-passthrough not loaded - opening PT devices might fail
+2023-10-07 10:22:59.691 T:226673    info <general>: Found 2 Lists of Devices
+2023-10-07 10:22:59.691 T:226673    info <general>: Enumerated ALSA devices:
+2023-10-07 10:22:59.691 T:226673    info <general>:     Device 1
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceName      : @
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayName     : Default (AML-AUGESOUND Analog)
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayNameExtra: PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.691 T:226673    info <general>:     Device 2
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceName      : sysdefault:CARD=AMLAUGESOUND
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayNameExtra: PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.691 T:226673    info <general>:     Device 3
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceName      : surround71:CARD=AMLAUGESOUND,DEV=0
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_displayNameExtra: HDMI Multi Ch PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.691 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.692 T:226673    info <general>:     Device 4
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_deviceName      : iec958:CARD=AMLAUGESOUND,DEV=0
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_displayNameExtra: S/PDIF
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_IEC958
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_dataFormats     : AE_FMT_RAW,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_512
+2023-10-07 10:22:59.692 T:226673    info <general>: Enumerated PULSE devices:
+2023-10-07 10:22:59.692 T:226673    info <general>:     Device 1
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_deviceName      : Default
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_displayName     : Default
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_displayNameExtra: Bluetooth Audio (PULSEAUDIO)
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+2023-10-07 10:22:59.692 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.692 T:226674    info <general>: CActiveAESink::OpenSink - initialize sink
+2023-10-07 10:22:59.692 T:226674    info <general>: CAESinkALSA::Initialize - Configure simple control for "AUGESOUND"
+2023-10-07 10:22:59.692 T:226674    info <general>: CAESinkALSA - Use card "hw:0" and set codec format "2 CH PCM"
+2023-10-07 10:22:59.694 T:226674    info <general>: CAESinkALSA - Set Spdif to HDMITX to "Spdif"
+2023-10-07 10:22:59.694 T:226674    info <general>: CAESinkALSA - Set codec for "Audio spdif_b format"
+2023-10-07 10:22:59.694 T:226674    info <general>: CAESinkALSA - Set codec for "Audio spdif format"
+2023-10-07 10:22:59.694 T:226674    info <general>: CAESinkALSA::Initialize - Attempting to open device "surround71:CARD=AMLAUGESOUND,DEV=0"
+2023-10-07 10:22:59.699 T:226674    info <general>: CAESinkALSA::Initialize - Opened device "surround71:CARD=AMLAUGESOUND,DEV=0"
+2023-10-07 10:22:59.700 T:226674    info <general>: CAESinkALSA::InitializeHW - Your hardware does not support AE_FMT_FLOAT, trying other formats
+2023-10-07 10:22:59.700 T:226674    info <general>: CAESinkALSA::InitializeHW - Using data format AE_FMT_S24NE4
+2023-10-07 10:22:59.705 T:226558    info <general>: Loading special://xbmc/system/Lircmap.xml
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'mceusb'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'XboxDVDDongle'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'Microsoft_Xbox'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'PinnacleSysPCTVRemote'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'anysee'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'iMON-PAD'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'Antec_Veris_RM200'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'MCE_via_iMON'
+2023-10-07 10:22:59.707 T:226558    info <general>: * Adding remote mapping for device 'TwinHanRemote'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Adding remote mapping for device 'linux-input-layer'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Linking remote mapping for 'linux-input-layer' to 'cx23885_remote'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Adding remote mapping for device 'mediacenter'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Adding remote mapping for device 'devinput'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Adding remote mapping for device 'devinput-32'
+2023-10-07 10:22:59.708 T:226558    info <general>: * Adding remote mapping for device 'devinput-64'
+2023-10-07 10:22:59.756 T:226493    info <general>: CLangInfo: loading resource.language.en_gb language information...
+2023-10-07 10:22:59.758 T:226493    info <general>: global locale set to C
+2023-10-07 10:22:59.759 T:226493    info <general>: CLangInfo: loading resource.language.en_gb language strings...
+2023-10-07 10:22:59.803 T:226716    info <general>: Running database version Addons33
+2023-10-07 10:22:59.805 T:226716    info <general>: Running database version ViewModes6
+2023-10-07 10:22:59.806 T:226716    info <general>: Running database version Textures13
+2023-10-07 10:22:59.810 T:226716    info <general>: Running database version MyMusic82
+2023-10-07 10:22:59.815 T:226716    info <general>: Running database version MyVideos121
+2023-10-07 10:22:59.817 T:226716    info <general>: Running database version TV40
+2023-10-07 10:22:59.818 T:226716    info <general>: Running database version Epg16
+2023-10-07 10:22:59.852 T:226673 warning <general>: Pulseaudio module module-allow-passthrough not loaded - opening PT devices might fail
+2023-10-07 10:22:59.853 T:226673    info <general>: Found 2 Lists of Devices
+2023-10-07 10:22:59.853 T:226673    info <general>: Enumerated PULSE devices:
+2023-10-07 10:22:59.853 T:226673    info <general>:     Device 1
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_deviceName      : Default
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_displayName     : Default
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_displayNameExtra: Bluetooth Audio (PULSEAUDIO)
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+2023-10-07 10:22:59.853 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.856 T:226673 warning <general>: Pulseaudio module module-allow-passthrough not loaded - opening PT devices might fail
+2023-10-07 10:22:59.857 T:226673    info <general>: Found 2 Lists of Devices
+2023-10-07 10:22:59.857 T:226673    info <general>: Enumerated PULSE devices:
+2023-10-07 10:22:59.857 T:226673    info <general>:     Device 1
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_deviceName      : Default
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_displayName     : Default
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_displayNameExtra: Bluetooth Audio (PULSEAUDIO)
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+2023-10-07 10:22:59.857 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:22:59.866 T:226493    info <general>: Unloaded skin
+2023-10-07 10:22:59.869 T:226493    info <general>:   load skin from: /storage/.kodi/addons/skin.eminence.2/ (version: 4.1.0)
+2023-10-07 10:22:59.869 T:226493    info <general>:   load fonts for skin...
+2023-10-07 10:22:59.871 T:226493    info <general>: Loading skin includes from /storage/.kodi/addons/skin.eminence.2/16x9/Includes.xml
+2023-10-07 10:23:00.082 T:226493    info <general>: LoadFonts: Loading fonts from '/storage/.kodi/addons/skin.eminence.2/16x9/Font.xml'
+2023-10-07 10:23:00.118 T:226493    info <general>: LoadTimers: Trying to load skin timers from /storage/.kodi/addons/skin.eminence.2/16x9/Timers.xml
+2023-10-07 10:23:00.118 T:226493 warning <general>: LoadTimers: Could not load timers file /storage/.kodi/addons/skin.eminence.2/16x9/Timers.xml: Failed to open file (row: 0, col: 0)
+2023-10-07 10:23:00.118 T:226493    info <general>:   load new skin...
+2023-10-07 10:23:00.118 T:226493    info <general>: Loading custom window XMLs from skin path /storage/.kodi/addons/skin.eminence.2/16x9
+2023-10-07 10:23:00.132 T:226493    info <general>:   initialize new skin...
+2023-10-07 10:23:00.133 T:226493    info <general>: Loading skin file: DialogBusy.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.133 T:226493    info <general>: Loading skin file: DialogSettings.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.147 T:226493    info <general>: Skipped 1 duplicate messages..
+2023-10-07 10:23:00.147 T:226493    info <general>: Loading skin file: DialogNotification.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.149 T:226493    info <general>: Loading skin file: DialogSeekBar.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.150 T:226493    info <general>: Loading skin file: DialogExtendedProgressBar.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.153 T:226493    info <general>: Loading skin file: Pointer.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.154 T:226493    info <general>: Loading skin file: Custom_AutoVis_1122.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.154 T:226493    info <general>: Loading skin file: DialogPVRChannelsOSD.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.158 T:226493    info <general>: Loading skin file: DialogBusy.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.158 T:226493    info <general>: Loading skin file: DialogPVRChannelGuide.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.161 T:226493    info <general>: Loading skin file: DialogVolumeBar.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.165 T:226493    info <general>: Loading skin file: DialogSubtitles.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.171 T:226493    info <general>: Loading skin file: VideoOSD.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.176 T:226493    info <general>: Loading skin file: Custom_Overlay.xml, load type: LOAD_ON_GUI_INIT
+2023-10-07 10:23:00.194 T:226493    info <general>: Loading resource://resource.uisounds.kodi/sounds.xml
+2023-10-07 10:23:00.233 T:226493    info <general>:   skin loaded...
+2023-10-07 10:23:00.233 T:226493    info <general>: Loading skin file: Startup.xml, load type: LOAD_EVERY_TIME
+2023-10-07 10:23:00.259 T:226493    info <general>: Loading skin file: Home.xml, load type: KEEP_IN_MEMORY
+2023-10-07 10:23:00.260 T:226493 warning <general>: Skin has invalid include: skinshortcuts-template-submenu-widget
+2023-10-07 10:23:00.366 T:226493    info <general>: Skipped 3 duplicate messages..
+2023-10-07 10:23:00.365 T:226493 warning <general>: JSONRPC: Could not parse type "Setting.Details.SettingList"
+2023-10-07 10:23:00.366 T:226493    info <general>: JSONRPC: Adding type "Setting.Details.SettingList" to list of incomplete definitions (waiting for "Setting.Details.Setting")
+2023-10-07 10:23:00.366 T:226493    info <general>: JSONRPC: Resolving incomplete types/methods referencing Setting.Details.Setting
+2023-10-07 10:23:00.393 T:226493    info <general>: JSONRPC v13.0.0: Successfully initialized
+2023-10-07 10:23:00.393 T:226493    info <general>: [Media Detection] starting service for optical media detection
+2023-10-07 10:23:00.417 T:226493    info <general>: AddOnLog: peripheral.joystick: Enabling joystick interface "linux"
+2023-10-07 10:23:00.423 T:226493    info <general>: Register - new keyboard device registered on application->keyboard: Keyboard (0000:0000)
+2023-10-07 10:23:00.423 T:226493    info <general>: Register - new mouse device registered on application->mouse: Mouse (0000:0000)
+2023-10-07 10:23:00.427 T:226752    info <general>: AddOnLog: peripheral.joystick: Initialized joystick 0: "Nintendo Switch Pro Controller", axes: 4, hats: 0, buttons: 18
+2023-10-07 10:23:00.427 T:226752    info <general>: Loading controller layout: /storage/.kodi/addons/game.controller.default/resources/layout.xml
+2023-10-07 10:23:00.432 T:226752    info <general>: Loading controller layout: /storage/.kodi/addons/game.controller.switch/resources/layout.xml
+2023-10-07 10:23:00.439 T:226493    info <general>: Loading player core factory settings from special://xbmc/system/playercorefactory.xml.
+2023-10-07 10:23:00.439 T:226493    info <general>: Loaded playercorefactory configuration
+2023-10-07 10:23:00.439 T:226493    info <general>: Loading player core factory settings from special://masterprofile/playercorefactory.xml.
+2023-10-07 10:23:00.439 T:226493    info <general>: special://masterprofile/playercorefactory.xml does not exist. Skipping.
+2023-10-07 10:23:00.439 T:226493    info <general>: removing tempfiles
+2023-10-07 10:23:00.451 T:226752    info <general>: Loading controller layout: /storage/.kodi/addons/game.controller.mouse/resources/layout.xml
+2023-10-07 10:23:00.474 T:226752    info <general>: Loading controller layout: /storage/.kodi/addons/game.controller.ps.dualanalog/resources/layout.xml
+2023-10-07 10:23:00.475 T:226752    info <general>: Loading controller layout: /storage/.kodi/addons/game.controller.ps.dualshock/resources/layout.xml
+2023-10-07 10:23:00.524 T:226493    info <general>: initialize done
+2023-10-07 10:23:00.525 T:226493    info <general>: Running the application...
+2023-10-07 10:23:00.535 T:226493    info <general>: starting zeroconf publishing
+2023-10-07 10:23:00.537 T:226770    info <general>: ES: Starting UDP Event server on port 9777
+2023-10-07 10:23:00.538 T:226770    info <general>: UDP: Listening on port 9777 (ipv6 : false)
+2023-10-07 10:23:00.548 T:226493    info <general>: JSONRPC Server: Successfully initialized
+2023-10-07 10:23:00.556 T:226493    info <general>: CWSDiscoveryListenerUDP::Start - Started
+2023-10-07 10:23:00.631 T:226751    info <general>: Register - new cec device registered on cec->AOCEC: CEC Adapter (0000:0000)
+2023-10-07 10:23:00.760 T:226493    info <general>: GLES: Enabling VSYNC
+2023-10-07 10:23:00.788 T:226752   error <general>: AddOnLog: peripheral.joystick: Device "Sony Interactive Entertainment Wireless Controller": can't find <controller> tag
+2023-10-07 10:23:00.834 T:226752    info <general>: Register - new joystick device registered on addon->peripheral.joystick/0: Nintendo Switch Pro Controller
+2023-10-07 10:23:02.804 T:226767   error <general>: EXCEPTION Thrown (PythonToCppException) : -->Python callback/script returned the following error<--
+                                                    - NOTE: IGNORING THIS CAN LEAD TO MEMORY LEAKS!
+                                                   Error Type: <class 'AttributeError'>
+                                                   Error Contents: module 'xbmc' has no attribute 'translatePath'
+                                                   Traceback (most recent call last):
+                                                     File "/storage/.kodi/addons/service.autosubs/default.py", line 3, in <module>
+                                                       from resources.lib.autosubs import *
+                                                     File "/storage/.kodi/addons/service.autosubs/resources/lib/autosubs.py", line 14, in <module>
+                                                       __cwd__ = xbmc.translatePath(__addon__.getAddonInfo('path'))
+                                                                 ^^^^^^^^^^^^^^^^^^
+                                                   AttributeError: module 'xbmc' has no attribute 'translatePath'
+                                                   -->End of Python script error report<--
+                                                   
+2023-10-07 10:23:06.977 T:226673    info <general>: CAESinkALSA - Unable to open device "surround51" for playback
+2023-10-07 10:23:06.979 T:226673    info <general>: CAESinkALSA - Unable to open device "surround40" for playback
+2023-10-07 10:23:06.979 T:226673    info <general>: CAESinkALSA - Unable to open device "surround51" for playback
+2023-10-07 10:23:07.018 T:226673 warning <general>: Pulseaudio module module-allow-passthrough not loaded - opening PT devices might fail
+2023-10-07 10:23:07.019 T:226673    info <general>: Found 2 Lists of Devices
+2023-10-07 10:23:07.019 T:226673    info <general>: Enumerated ALSA devices:
+2023-10-07 10:23:07.019 T:226673    info <general>:     Device 1
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceName      : @
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayName     : Default (AML-AUGESOUND Analog)
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayNameExtra: PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:23:07.019 T:226673    info <general>:     Device 2
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceName      : sysdefault:CARD=AMLAUGESOUND
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayNameExtra: PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:23:07.019 T:226673    info <general>:     Device 3
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceName      : surround71:CARD=AMLAUGESOUND,DEV=0
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayNameExtra: HDMI Multi Ch PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_channels        : FL, FR, LFE, FC, BL, BR, BLOC, BROC
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_dataFormats     : AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:23:07.019 T:226673    info <general>:     Device 4
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceName      : iec958:CARD=AMLAUGESOUND,DEV=0
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayNameExtra: S/PDIF
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_IEC958
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_dataFormats     : AE_FMT_RAW,AE_FMT_S16NE,AE_FMT_S16LE
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_512
+2023-10-07 10:23:07.019 T:226673    info <general>:     Device 5
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_deviceName      : hdmi:CARD=AMLAUGESOUND,DEV=0
+2023-10-07 10:23:07.019 T:226673    info <general>:         m_displayName     : AML-AUGESOUND
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_displayNameExtra: HDMI
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_HDMI
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_channels        : FL, FR, BL, BR, FC, LFE, SL, SR
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_sampleRates     : 32000,44100,48000,88200,96000,176400,192000
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_dataFormats     : AE_FMT_S16NE,AE_FMT_S16LE,AE_FMT_RAW
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_DTSHD,STREAM_TYPE_DTSHD_MA,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_512,STREAM_TYPE_EAC3,STREAM_TYPE_TRUEHD
+2023-10-07 10:23:07.020 T:226673    info <general>: Enumerated PULSE devices:
+2023-10-07 10:23:07.020 T:226673    info <general>:     Device 1
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_deviceName      : Default
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_displayName     : Default
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_displayNameExtra: Bluetooth Audio (PULSEAUDIO)
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_deviceType      : AE_DEVTYPE_PCM
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_channels        : FL, FR
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_sampleRates     : 5512,8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000,384000
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_dataFormats     : AE_FMT_U8,AE_FMT_S16NE,AE_FMT_S24NE3,AE_FMT_S24NE4,AE_FMT_S32NE,AE_FMT_FLOAT
+2023-10-07 10:23:07.020 T:226673    info <general>:         m_streamTypes     : No passthrough capabilities
+2023-10-07 10:23:07.020 T:226674    info <general>: CActiveAESink::OpenSink - initialize sink
+2023-10-07 10:23:07.020 T:226674    info <general>: CAESinkALSA::Initialize - Configure simple control for "AUGESOUND"
+2023-10-07 10:23:07.021 T:226674    info <general>: CAESinkALSA - Use card "hw:0" and set codec format "2 CH PCM"
+2023-10-07 10:23:07.022 T:226674    info <general>: CAESinkALSA - Set Spdif to HDMITX to "Spdif"
+2023-10-07 10:23:07.022 T:226674    info <general>: CAESinkALSA - Set codec for "Audio spdif_b format"
+2023-10-07 10:23:07.022 T:226674    info <general>: CAESinkALSA - Set codec for "Audio spdif format"
+2023-10-07 10:23:07.022 T:226674    info <general>: CAESinkALSA::Initialize - Attempting to open device "surround71:CARD=AMLAUGESOUND,DEV=0"
+2023-10-07 10:23:07.027 T:226674    info <general>: CAESinkALSA::Initialize - Opened device "surround71:CARD=AMLAUGESOUND,DEV=0"
+2023-10-07 10:23:07.028 T:226674    info <general>: CAESinkALSA::InitializeHW - Your hardware does not support AE_FMT_FLOAT, trying other formats
+2023-10-07 10:23:07.028 T:226674    info <general>: CAESinkALSA::InitializeHW - Using data format AE_FMT_S24NE4
+2023-10-07 10:23:09.162 T:226764    info <general>: [ script.embuary.helper ] Service: Started
+2023-10-07 10:23:09.163 T:226764    info <general>: [ script.embuary.helper ] Service: Player monitor started
+2023-10-07 10:23:10.083 T:226493    info <general>: Quitting due to POSIX signal
+2023-10-07 10:23:10.099 T:226493    info <general>: Stopping the application...
+2023-10-07 10:23:10.099 T:226493    info <general>: Stopping player
+2023-10-07 10:23:10.099 T:226493    info <general>: Storing total System Uptime
+2023-10-07 10:23:10.100 T:226493    info <general>: Saving settings
+2023-10-07 10:23:10.111 T:226493    info <general>: Saving skin settings
+2023-10-07 10:23:10.115 T:226493    info <general>: Stopping all
+2023-10-07 10:23:10.115 T:226493    info <general>: ES: Stopping event server
+2023-10-07 10:23:10.548 T:226770    info <general>: ES: UDP Event server stopped
+2023-10-07 10:23:11.574 T:226493    info <general>: CWSDiscoveryListenerUDP::Stop - Stopped
+2023-10-07 10:23:11.574 T:226493    info <general>: stopping zeroconf publishing
+2023-10-07 10:23:11.581 T:226493    info <general>: CServiceAddonManager: failed to stop plugin.video.chainsgenocide (may have ended)
+2023-10-07 10:23:11.581 T:226493    info <general>: CServiceAddonManager: failed to stop plugin.video.homelander (may have ended)
+2023-10-07 10:23:12.178 T:226757    info <general>: >> luffy <<: Main Monitor Service Starting
+2023-10-07 10:23:12.178 T:226757    info <general>: >> luffy <<: Settings Monitor Service Starting
+2023-10-07 10:23:12.178 T:226757    info <general>: >> luffy <<: InitializeDatabases Service Starting
+2023-10-07 10:23:12.241 T:226757    info <general>: >> luffy <<: InitializeDatabases Service Finished
+2023-10-07 10:23:12.241 T:226757    info <general>: >> luffy <<: CheckSettingsFile Service Starting
+2023-10-07 10:23:12.260 T:226757    info <general>: >> luffy <<: CheckSettingsFile Service Finished
+2023-10-07 10:23:12.299 T:226757    info <general>: >> luffy <<: CheckUndesirablesDatabase Service Starting
+2023-10-07 10:23:12.343 T:226757    info <general>: >> luffy <<: CheckUndesirablesDatabase Service Finished
+2023-10-07 10:23:12.347 T:227247    info <general>: >> luffy <<: TraktMonitor Service Starting
+2023-10-07 10:23:12.349 T:227248    info <general>: >> luffy <<: Debrid Account Expiry Notification Service Starting
+2023-10-07 10:23:12.350 T:226757    info <general>: >> luffy <<: Clear Subtitles Service Starting
+2023-10-07 10:23:12.358 T:226757    info <general>: >> luffy <<: Clear Subtitles Service Finished
+2023-10-07 10:23:12.358 T:226757    info <general>: >> luffy <<: ViewsSetWindowProperties Service Starting
+2023-10-07 10:23:12.359 T:227248    info <general>: >> luffy <<: Debrid Account Expiry Notification Service Finished
+2023-10-07 10:23:12.368 T:226757    info <general>: >> luffy <<: ViewsSetWindowProperties Service Finished
+2023-10-07 10:23:12.368 T:226757    info <general>: >> luffy <<: AutoRun Service Starting
+2023-10-07 10:23:12.369 T:226757    info <general>: >> luffy <<: AutoRun Service Finished
+2023-10-07 10:23:12.369 T:226757    info <general>: >> luffy <<: ReuseLanguageInvokerCheck Service Starting
+2023-10-07 10:23:12.374 T:227247    info <general>: >> luffy <<: TraktMonitor Service Finished
+2023-10-07 10:23:12.379 T:226757    info <general>: >> luffy <<: ReuseLanguageInvokerCheck Service Finished
+2023-10-07 10:23:12.415 T:226761    info <general>: Twitch: Service: Start
+2023-10-07 10:23:16.588 T:226493   error <general>: CPythonInvoker(3, /storage/.kodi/addons/plugin.video.luffy/resources/lib/service.py): script didn't stop in 5 seconds - let's kill it
+2023-10-07 10:23:18.382 T:226761    info <general>: Twitch: Service: Shutdown
+2023-10-07 10:23:19.205 T:226764    info <general>: [ script.embuary.helper ] Service: Player monitor stopped
+2023-10-07 10:23:19.205 T:226764    info <general>: [ script.embuary.helper ] Service: Stopped
+2023-10-07 10:23:19.373 T:226493    info <general>: CServiceAddonManager: failed to stop service.autosubs (may have ended)
+2023-10-07 10:23:20.286 T:226493    info <general>: Application stopped
+2023-10-07 10:23:23.489 T:226493    info <general>: AddOnLog: peripheral.joystick: Disabling joystick interface "linux"
+2023-10-07 10:23:23.490 T:226493    info <general>: ADDON: Dll Destroyed - Joystick Support
+2023-10-07 10:23:23.491 T:226493    info <general>: unload skin
+2023-10-07 10:23:23.531 T:226493    info <general>: Unloaded skin

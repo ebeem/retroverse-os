@@ -16,6 +16,11 @@ if [ ! -L "$CONFIG_DIR" ]; then
   ln -sf $CONFIG_DIR2 $CONFIG_DIR
 fi
 
+if [ ! -L "/storage/.kodi" ]; then
+  rm -rf /storage/.kodi
+	ln -sf /storage/.config/kodi /storage/.kodi
+fi
+
 if [ "${EE_DEVICE}" == "Amlogic" ]; then
   rm /storage/.config/asound.conf >/dev/null 2>&1
   cp /storage/.config/asound.conf-amlogic /storage/.config/asound.conf

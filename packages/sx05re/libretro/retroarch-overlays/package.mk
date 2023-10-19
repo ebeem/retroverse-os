@@ -36,3 +36,4 @@ makeinstall_target() {
   rm -rf ${PKG_BUILD}/keyboards
   cp -r ${PKG_BUILD}/* $INSTALL/usr/share/retroarch-overlays
 }
+

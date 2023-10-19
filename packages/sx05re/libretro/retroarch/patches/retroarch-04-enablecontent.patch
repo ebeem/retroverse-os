@@ -27,7 +27,7 @@
 @@ -17765,7 +17765,7 @@
                    general_read_handler,
                    SD_FLAG_LAKKA_ADVANCED);
-
+ 
 -#ifdef HAVE_LAKKA
 +#ifndef HAVE_LAKKA
              CONFIG_BOOL(

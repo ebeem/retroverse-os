@@ -3,7 +3,7 @@
 # This script is based on https://github.com/ToKe79/retroarch-kodi-addon-LibreELEC/blob/master/retroarch-kodi.sh
 # It has been adapted to EmuELEC by Shanti Gilbert and modified to install emulationstation and other emulators.
 # Fair warning, this script is really hacky, probably very bad practices and other bad habbits,
-# You have been warned! If you are a bash expert you will probably cringe, but instead of that maybe you could help to make it better? 
+# You have been warned! If you are a bash expert you will probably cringe, but instead of that maybe you could help to make it better?
 
 build_it() {
 REPO_DIR=""
@@ -21,17 +21,17 @@ EMUELEC_PATH="${SX05RE_PATH}/emuelec"
 
 LOG="${SCRIPT_DIR}/emuelec-kodi_`date +%Y%m%d_%H%M%S`.log"
 
-# Exit if not in the right branch 
+# Exit if not in the right branch
 if [ -d "$EMUELEC" ] ; then
 	cd "$EMUELEC"
 	git checkout ${GIT_BRANCH} &>>"$LOG"
 		branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-	if [ $branch != $GIT_BRANCH ]; then 
+	if [ $branch != $GIT_BRANCH ]; then
 	   echo "ERROR: Could not automatically switch branch to $GIT_BRANCH. Please make sure you are in branch $GIT_BRANCH before running this script"
 	   echo "Wrong GIT branch, wanted $GIT_BRANCH got $branch" &>>"$LOG"
 	   exit 1
-   fi 
-fi 
+   fi
+fi
 
 [ -z "$DISTRO" ] && DISTRO=EmuELEC
 [ -z "$PROJECT" ] && PROJECT=Amlogic
@@ -63,7 +63,7 @@ PKG_EMUS="emulationstation-addon advancemame reicastsa amiberry hatarisa mupen64
 
 # PPSSPPSDL and openbor do not work on CoreELEC S922x (Amlogic-ng), we use PPSSPP from libretro and remove openbor
 if [ $PROJECT = "Amlogic" ]; then
-PKG_EMUS="$PKG_EMUS PPSSPPSDL openbor"	
+PKG_EMUS="$PKG_EMUS PPSSPPSDL openbor"
 fi
 
 PACKAGES_Sx05RE="$PKG_EMUS \
@@ -92,13 +92,13 @@ PACKAGES_Sx05RE="$PKG_EMUS \
 				SDL \
 				SDL_net \
 				capsimg"
-				
+
 
   PACKAGES_ALL="$LIBRETRO_CORES"
 
 LIBRETRO_EXTRA_CORES="citra beetle-psx beetle-saturn beetle-bsnes bsnes-mercury bsnes dinothawr higan-sfc-balanced higan-sfc lutro mame2003-midway mrboom easyrpg dolphin openlara pocketcdg virtualjaguar"
 
-PACKAGES_ALL="$LIBRETRO_BASE $PACKAGES_ALL $PACKAGES_Sx05RE" 
+PACKAGES_ALL="$LIBRETRO_BASE $PACKAGES_ALL $PACKAGES_Sx05RE"
 DISABLED_CORES="libretro-database $LIBRETRO_EXTRA_CORES"
 
 if [ -n "$DISABLED_CORES" ] ; then
@@ -198,7 +198,7 @@ if [ -d "$EMUELEC" ] ; then
 			else
 				echo "(failed- no package.mk)"
 				exit 1
-			fi			
+			fi
 			PKG_FOLDER="${BUILD_SUBDIR}/${package}-${PKG_VERSION}/.install_pkg"
 			if [ -d "$PKG_FOLDER" ] ; then
 				cp -Rf "${PKG_FOLDER}/"* "${TARGET_DIR}/" &>>"$LOG"
@@ -256,7 +256,7 @@ cp -rf ${SCRIPT_DIR}/${SX05RE_PATH}/emulationstation-addon/config/* "${ADDON_DIR
 [ $? -eq 0 ] && echo "(ok)" || { echo "(failed)" ; exit 1 ; }
 
 echo -ne "\tProfile"
-cp -rf "${SCRIPT_DIR}/${EMUELEC_PATH}/profile.d" "${ADDON_DIR}" 
+cp -rf "${SCRIPT_DIR}/${EMUELEC_PATH}/profile.d" "${ADDON_DIR}"
 mv "${ADDON_DIR}/profile.d/99-emuelec.conf" "${ADDON_DIR}/profile.d/99-emuelec.profile" &>>"$LOG"
 sed -i -e "s|export PATH.*|export PATH=\"/storage/.kodi/addons/${ADDON_NAME}/bin:/storage/.emulationstation/scripts:\$PATH\"|" "${ADDON_DIR}/profile.d/99-emuelec.profile"
 sed -i -e "s|/ee_arch|/storage/.kodi/addons/${ADDON_NAME}/config/ee_arch|" "${ADDON_DIR}/profile.d/99-emuelec.profile"
@@ -330,7 +330,7 @@ echo "Removing unneeded files "
   done
 
 echo -ne "\tOrphan info files"
-for f in ${ADDON_DIR}/lib/libretro/*.info; do 
+for f in ${ADDON_DIR}/lib/libretro/*.info; do
 name=${f%.*}
 if [ ! -f "$name.so" ]; then
 rm $f
@@ -342,7 +342,7 @@ echo -ne "\tUnused assets "
   for i in automatic dot-art flatui neoactive pixel retroactive retrosystem systematic convert.sh NPMApng2PMApng.py; do
   rm -rf "${ADDON_DIR}/resources/assets/xmb/$i"
   done
-  
+
   for i in branding glui nuklear nxrgui pkg switch wallpapers zarch COPYING; do
     rm -rf "${ADDON_DIR}/resources/assets/$i"
   done
@@ -374,7 +374,7 @@ read -d '' content <<EOF
 
 #set reicast BIOS dir to point to /storage/roms/bios/dc
 if [ ! -L /storage/.local/share/reicast/data ]; then
-	mkdir -p /storage/.local/share/reicast 
+	mkdir -p /storage/.local/share/reicast
 	rm -rf /storage/.local/share/reicast/data
 	ln -s /storage/roms/bios/dc /storage/.local/share/reicast/data
 fi
@@ -399,7 +399,7 @@ for D in \`find /dev/input/by-id/ | grep event-joystick\`; do
    y=\$((y+1))
  if [\$y -lt 4]; then
   break
- fi 
+ fi
 done
 
 /storage/.kodi/addons/${ADDON_NAME}/bin/reicast "\$1"
@@ -424,7 +424,7 @@ echo -ne "\temustation-config "
 read -d '' content <<EOF
 #!/bin/sh
 
-#name of the file we need to put in the roms folder in your USB or SDCARD 
+#name of the file we need to put in the roms folder in your USB or SDCARD
 ROMFILE="emuelecroms"
 
 # we look for the file in the rompath
@@ -443,7 +443,7 @@ if [[ -z "\${FULLPATHTOROMS}" ]]; then
 		rm /storage/roms
 		#echo "move the roms folder"
 	fi
- 
+
        # we strip the name of the file.
        PATHTOROMS=\${FULLPATHTOROMS%\$ROMFILE}
 
@@ -568,7 +568,7 @@ echo 'emuelec_exit_to_kodi = "true"' >> \$RA_CONFIG_FILE
 	else
 		\$RA_EXE \$RA_PARAMS
 	fi
-	
+
 EOF
 echo "$content" > bin/ee_retroarch.sh
 [ $? -eq 0 ] && echo "(ok)" || { echo "(failed)" ; exit 1 ; }
@@ -592,7 +592,7 @@ sed -i '/emuelec_exit_to_kodi = /d' \$RA_CONFIG_FILE
 
 if [[ ! -d \$ADDON_DIR/logs ]]; then
 	mkdir -p \$ADDON_DIR/logs
-fi 
+fi
 
 # external/usb rom mounting
 sh \$ADDON_DIR/bin/emustation-config
@@ -604,10 +604,10 @@ sh \$ADDON_DIR/bin/emustation-config
  fi
 
 [ ! -d "\$RA_CONFIG_DIR" ] && mkdir -p "\$RA_CONFIG_DIR"
-  
+
  if [ ! -d "\$ROMS_FOLDER" ] && [ ! -L "\$ROMS_FOLDER" ]; then
     mkdir -p "\$ROMS_FOLDER"
-    
+
      all_roms="downloads \
 BGM \
 3do \
@@ -676,8 +676,8 @@ x68000 \
 zxspectrum \
 atarijaguar \
 odyssey \
-zx81" 
- 
+zx81"
+
      for romfolder in \$(echo \$all_roms | tr "," " "); do
         mkdir -p "\$ROMS_FOLDER/\$romfolder"
      done
@@ -698,7 +698,7 @@ fi
 
 if [ -d /storage/.emulationstation ]; then
 rm -rf /storage/.emulationstation
-fi 
+fi
 
 if [ -L /tmp/joypads ]; then
 rm /tmp/joypads
@@ -1036,7 +1036,7 @@ echo -ne "Removing OpenBOR from es_systems.cfg"
 CFG="config/emulationstation/es_systems.cfg"
 xmlstarlet ed -L -P -d "/systemList/system[name='openbor']" $CFG
 [ $? -eq 0 ] && echo "(ok)" || { echo "(failed)" ; exit 1 ; }
-else 
+else
 echo -ne "Making modifications to openbor.sh..."
 CFG="bin/openbor.sh"
 sed -i -e "s|/usr/bin/setres.sh|/storage/.kodi/addons/${ADDON_NAME}/bin/setres.sh|" $CFG
@@ -1173,7 +1173,7 @@ echo
 echo "Finished."
 echo
 
-} 
+}
 
 build_it Amlogic
 build_it Amlogic-ng

@@ -18,21 +18,21 @@ PKG_TOOLCHAIN="make"
 PKG_NEED_UNPACK="$(get_pkg_directory busybox) $(get_pkg_directory wget) $(get_pkg_directory coreutils)"
 
 PKG_EXPERIMENTAL="munt nestopiaCV quasi88 xmil np2kai hypseus-singe yabasanshiroSA fbneoSA same_cdi"
-PKG_EMUS="$LIBRETRO_CORES advancemame PPSSPPSDL amiberry hatarisa openbor dosbox-staging mupen64plus-nx mupen64plus-nx-alt scummvmsa stellasa solarus dosbox-pure pcsx_rearmed potator freej2me duckstation flycastsa fmsx-libretro jzintv mupen64plussa"
+PKG_EMUS="$LIBRETRO_CORES advancemame amiberry hatarisa openbor dosbox-staging mupen64plus-nx mupen64plus-nx-alt scummvmsa stellasa solarus dosbox-pure pcsx_rearmed potator freej2me duckstation flycastsa fmsx-libretro jzintv mupen64plussa"
 PKG_TOOLS="emuelec-tools"
 PKG_DEPENDS_TARGET+=" $PKG_TOOLS $PKG_EMUS $PKG_EXPERIMENTAL"
 
 # Removed cores for space and/or performance
 # PKG_DEPENDS_TARGET="$PKG_DEPENDS_TARGET mame2015 fba4arm mba.mini.plus $LIBRETRO_EXTRA_CORES xow"
 
-# These packages are only meant for S922x, S905x2 and A311D devices as they run poorly on S905" 
+# These packages are only meant for S922x, S905x2 and A311D devices as they run poorly on S905"
 if [ "${DEVICE}" == "Amlogic-ng" ] || [ "$DEVICE" == "RK356x" ] || [ "$DEVICE" == "OdroidM1" ]; then
 	PKG_DEPENDS_TARGET+=" $LIBRETRO_S922X_CORES mame2016"
 fi
 
 if [ "$DEVICE" == "OdroidGoAdvance" ] || [ "$DEVICE" == "GameForce" ]; then
 	PKG_DEPENDS_TARGET+=" kmscon odroidgoa-utils"
-    
+
   #we disable some cores that are not working or work poorly on OGA
 	for discore in duckstation mesen-s virtualjaguar quicknes MC; do
 		PKG_DEPENDS_TARGET=$(echo $PKG_DEPENDS_TARGET | sed "s|$discore | |")
@@ -42,7 +42,7 @@ else
 	PKG_DEPENDS_TARGET+=" fbterm"
 fi
 
-# These cores do not work, or are not needed on aarch64, this package needs cleanup :) 
+# These cores do not work, or are not needed on aarch64, this package needs cleanup :)
 if [ "$ARCH" == "aarch64" ]; then
   for discore in quicknes parallel-n64 pcsx_rearmed; do
 		PKG_DEPENDS_TARGET=$(echo $PKG_DEPENDS_TARGET | sed "s|$discore| |")
@@ -112,17 +112,17 @@ makeinstall_target() {
 
 
   echo "$DEVICE" > ${INSTALL}/ee_arch
-  
+
   mkdir -p ${INSTALL}/usr/share/retroarch-overlays
   cp -r $PKG_DIR/overlay/* ${INSTALL}/usr/share/retroarch-overlays
-  
+
   mkdir -p ${INSTALL}/usr/share/common-shaders
   cp -r $PKG_DIR/shaders/* ${INSTALL}/usr/share/common-shaders
-    
+
   mkdir -p ${INSTALL}/usr/share/libretro-database
   touch ${INSTALL}/usr/share/libretro-database/dummy
-   
-  # Make sure all scripts and binaries are executable  
+
+  # Make sure all scripts and binaries are executable
   find $INSTALL/usr/bin -type f -exec chmod +x {} \;
 
 }
@@ -145,17 +145,17 @@ post_install() {
   cp $(get_install_dir coreutils)/usr/bin/sort ${INSTALL}/usr/bin
   cp $(get_install_dir grep)/usr/bin/grep ${INSTALL}/usr/bin
   find ${INSTALL}/usr/ -type f -iname "*.sh" -exec chmod +x {} \;
-  
+
   # Remove scripts from OdroidGoAdvance build
-  if [[ ${DEVICE} == "OdroidGoAdvance" || "${DEVICE}" == "GameForce" ]]; then 
-    for i in "wifi" "sselphs_scraper" "skyscraper" "system_info"; do 
+  if [[ ${DEVICE} == "OdroidGoAdvance" || "${DEVICE}" == "GameForce" ]]; then
+    for i in "wifi" "sselphs_scraper" "skyscraper" "system_info"; do
     xmlstarlet ed -L -P -d "/gameList/game[name='${i}']" ${INSTALL}/usr/bin/scripts/setup/gamelist.xml
     rm "${INSTALL}/usr/bin/scripts/setup/${i}.sh"
     done
-  fi 
+  fi
 
   #For automatic updates we use the buildate
 	date +"%m%d%Y" > ${INSTALL}/usr/buildate
-	
+
 	ln -sf /storage/roms ${INSTALL}/roms
-} 
+}

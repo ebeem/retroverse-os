@@ -8,7 +8,7 @@
     <setting id="device_name" value="CoreELEC" />
     <setting id="device_type" value="36051" />
     <setting id="double_tap_timeout_ms" value="300" />
-    <setting id="enabled" value="1" />
+    <setting id="enabled" value="0" />
     <setting id="pause_or_stop_playback_on_deactivate" value="36045" />
     <setting id="pause_playback_on_deactivate" value="0" />
     <setting id="physical_address" value="0" />

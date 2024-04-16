@@ -4,6 +4,7 @@
 # Source predefined functions and variables
 . /etc/profile
 
+systemctl stop eventlircd
 blank_buffer
 systemctl start emustation
 blank_buffer

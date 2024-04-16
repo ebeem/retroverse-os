@@ -15,7 +15,7 @@ PKG_TOOLCHAIN="autotools"
 PKG_CONFIGURE_OPTS_TARGET="--enable-devinput \
                            --enable-uinput \
                            --with-gnu-ld \
-                           --without-x \
+													 --with-x \
                            --runstatedir=/run"
 
 pre_configure_target() {

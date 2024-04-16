@@ -147,5 +147,9 @@ case "$DEFE" in
     ;;
 esac
 
+
+irexec -d
+irxevent -d
+
 # run custom_start ending scripts
 /storage/.config/custom_start.sh after
